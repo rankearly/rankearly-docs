@@ -1,0 +1,103 @@
+---
+title: "Core concepts"
+description: "Understand the key ideas behind RankEarly: terms, topics, winnability, and how research modes fit together."
+---
+
+## Terms
+
+A **term** is a semantically distinct phrase you can use for positioning and product communication — landing page headlines, taglines, meta titles, ad copy.
+
+Terms represent a category or market and have real search demand.
+
+| Good terms | Why |
+|---|---|
+| "waterproof hiking shoes" | Specific product category |
+| "invoice software for freelancers" | Clear market + audience |
+| "SOC 2 compliance software" | Defined category with search demand |
+
+| Not terms | Why |
+|---|---|
+| "shoes" | Too broad |
+| "How to choose waterproof hiking shoes" | This is a topic, not a term |
+| "best waterproof hiking shoes for wide feet" | Modifier variation — belongs to the "waterproof hiking shoes" term |
+
+RankEarly groups modifier variations under the same term. "Best AI content writer" and "top AI content writer" both belong to the **"AI content writer"** term. This prevents false positives where variations appear as separate candidates.
+
+## Topics
+
+A **topic** is an intent-driven content idea — not just a keyword, but a specific piece of content you should write.
+
+```
+Topic: "How to Choose Waterproof Hiking Shoes"
+├── Primary keyword: waterproof hiking shoes
+├── Related keywords: how to choose hiking shoes, best waterproof shoes
+├── Intent: Informational
+└── Winnability: Build / Skip
+```
+
+Traditional SEO tools show **keywords to rank for**, which requires expertise to turn into content ideas. RankEarly shows **content pieces to write** — directly actionable even without SEO background.
+
+### Terms vs topics
+
+| | Terms | Topics |
+|---|---|---|
+| **What** | Positioning phrases | Content pieces to write |
+| **Example** | "waterproof hiking shoes" | "How to Choose Waterproof Hiking Shoes" |
+| **Used for** | Landing pages, taglines, meta titles | Blog posts, guides, articles |
+| **Found via** | Primary Term research | Topic Clusters, Content Angles |
+
+## Winnability
+
+Every term and topic in RankEarly gets a winnability verdict. This tells you whether it's worth targeting given the current competitive landscape.
+
+### How it works
+
+RankEarly runs a **SERP gap analysis** on each keyword. Instead of relying only on keyword difficulty scores, it uses AI to evaluate six signals from the top 10 search results:
+
+| Signal | Good sign | Bad sign |
+|---|---|---|
+| Small sites or forums ranking | Smaller sites can compete | Only big brands dominate |
+| Mixed search intent | Google isn't sure — you can wedge in | Clear standard to beat |
+| Content format gap | Users want something results don't provide | Results already match |
+| Low-quality results | Thin or repetitive content — quality gap | Results are solid |
+| Strong competitors | No authority barriers | Official docs, .gov, giants |
+| Click-stealing SERP features | Organic results get clicks | Ads and panels push you down |
+
+A keyword is **Winnable** when it has 3+ positive signals and at most 1 negative signal. Otherwise, it's **Skip**.
+
+### Verdicts
+
+Different research modes aggregate keyword-level results into higher-level verdicts.
+
+**Primary Term** counts how many queries (the term itself + its support queries) are winnable:
+
+| Verdict | Condition | Meaning |
+|---|---|---|
+| **Build** | 3+ winnable queries | Clear opportunity — multiple angles reinforce the term |
+| **Challenging** | 1-2 winnable queries | Mixed signals, some angles viable |
+| **Skip** | 0 winnable queries | No winnable queries in this cluster |
+
+**Topic Clusters** and **Content Angles** apply winnability at the topic level, evaluating whether the keyword cluster behind each topic has enough opportunity to justify writing it.
+
+## Research modes
+
+RankEarly offers four research modes. Each answers a different question and can be used independently or together.
+
+| Mode | Question it answers | Output |
+|---|---|---|
+| **Primary Term** | "Which terms can I rank for?" | Up to 10 terms with winnability verdicts |
+| **Topic Clusters** | "What should I write about?" | Up to 10 pillars, each with subtopic clusters |
+| **Content Angles** | "How should I write about this?" | 5 content angles for a given idea |
+| **Keyword Expansion** | "What keywords exist for this idea?" | 300-500 keywords for bulk research |
+
+There's no required order. Pick the mode that matches where you are:
+
+- **Starting from scratch?** Run Primary Term to find your positioning, then Topic Clusters to plan content.
+- **Have an idea already?** Run Content Angles to find the best approach, or Keyword Expansion for comprehensive keyword data.
+- **Strategy evolving?** Run any mode again with new inputs as you learn more about your market.
+
+## Projects
+
+A project is the container for all your research. It stores your business context — product description, target audience, competitors, seed phrases — and every research mode uses it as input.
+
+You can run any research mode multiple times within a project. Past results are saved in **Research History**, and you can bookmark specific findings to **Saved Items** for quick reference.

@@ -63,23 +63,10 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Website",
-          "href": "https://rankearly.pro",
-          "icon": "globe"
-        },
-        {
-          "anchor": "Roadmap",
-          "href": "https://rankearly.featurebase.app/roadmap",
-          "icon": "map"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
+    "href": "https://rankearly.pro",
     "light": "/logo/rankearly-logo-text-transparent.png",
     "dark": "/logo/rankearly-logo-text-transparent-dark.png"
   },
@@ -98,15 +85,15 @@
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {

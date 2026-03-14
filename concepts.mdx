@@ -1,13 +1,13 @@
 ---
 title: "Core concepts"
-description: "Understand the key ideas behind RankEarly: terms, topics, winnability, and how research modes fit together."
+description: "Understand the core ideas behind RankEarly: terms, pillars, subtopics, keyword libraries, and how winnability works."
 ---
 
 ## Terms
 
-A **term** is a semantically distinct phrase you can use for positioning and product communication — landing page headlines, taglines, meta titles, ad copy.
+A **term** is a phrase you can use to position your product. It is the kind of language you might use in a landing page headline, tagline, meta title, or product description.
 
-Terms represent a category or market and have real search demand.
+Terms describe a category or market people actually search for.
 
 | Good terms | Why |
 |---|---|
@@ -18,86 +18,92 @@ Terms represent a category or market and have real search demand.
 | Not terms | Why |
 |---|---|
 | "shoes" | Too broad |
-| "How to choose waterproof hiking shoes" | This is a topic, not a term |
-| "best waterproof hiking shoes for wide feet" | Modifier variation — belongs to the "waterproof hiking shoes" term |
+| "How to choose waterproof hiking shoes" | This is an article idea, not a term |
+| "best waterproof hiking shoes for wide feet" | This is a variation of the main term, not a separate term |
 
-RankEarly groups modifier variations under the same term. "Best AI content writer" and "top AI content writer" both belong to the **"AI content writer"** term. This prevents false positives where variations appear as separate candidates.
+RankEarly groups close variations under the same term. "Best AI content writer" and "top AI content writer" both roll up to **"AI content writer"** instead of showing up as two different terms.
 
-## Topics
+## Pillars and subtopics
 
-A **topic** is an intent-driven content idea — not just a keyword, but a specific piece of content you should write.
+A **pillar** is a top-level content planning unit that groups related subtopics under one subject.
 
-```
-Topic: "How to Choose Waterproof Hiking Shoes"
-├── Primary keyword: waterproof hiking shoes
-├── Related keywords: how to choose hiking shoes, best waterproof shoes
-├── Intent: Informational
-└── Winnability: Build / Skip
-```
+- A pillar has a **pillar name** and a **subject**
+- A pillar contains multiple **subtopics**
+- A pillar helps you organize a broader content area, not one single article
 
-Traditional SEO tools show **keywords to rank for**, which requires expertise to turn into content ideas. RankEarly shows **content pieces to write** — directly actionable even without SEO background.
+A **subtopic** is an article-sized content opportunity inside that pillar. In RankEarly, **subtopic** and **keyword cluster** mean the same thing.
 
-### Terms vs topics
+- It groups related keywords that point to the same search intent
+- It usually maps to one content piece you could brief and write
+- You can still inspect the keywords behind it when you want more detail
 
-| | Terms | Topics |
+## Keyword libraries
+
+A **keyword library** is where RankEarly keeps the keywords and saved search results for a project.
+
+- [Keyword Expansion](/research/keyword-expansion) adds more keywords to it
+- [Primary terms](/research/primary-term) uses it to find terms
+- [Topic clusters](/research/topic-clusters) uses it to build pillars and subtopics
+
+This is why Keyword Expansion is usually the first step for a new project. It gives RankEarly more search data to work with later.
+
+## Terms and subtopics
+
+Terms and subtopics solve different problems.
+
+| | Terms | Subtopics |
 |---|---|---|
 | **What** | Positioning phrases | Content pieces to write |
-| **Example** | "waterproof hiking shoes" | "How to Choose Waterproof Hiking Shoes" |
+| **Example** | "waterproof hiking shoes" | "How to choose waterproof hiking shoes" |
 | **Used for** | Landing pages, taglines, meta titles | Blog posts, guides, articles |
-| **Found via** | Primary Term research | Topic Clusters, Content Angles |
+| **Found via** | Primary terms | Topic clusters |
+
+In practice:
+
+- **Terms** help you decide the market language you want to own
+- **Subtopics** help you decide the articles or pages you should publish
+- **Pillars** help you organize many subtopics into one broader content plan
 
 ## Winnability
 
-Every term and topic in RankEarly gets a winnability verdict. This tells you whether it's worth targeting given the current competitive landscape.
+RankEarly uses winnability to tell you whether an opportunity is worth targeting given the current competitive landscape.
 
-### How it works
+At the keyword level, RankEarly looks at the search results and decides whether the keyword looks **Winnable** or not. The full breakdown lives in [SERP gap analysis](/how-it-works/serp-gap-analysis).
 
-RankEarly runs a **SERP gap analysis** on each keyword. Instead of relying only on keyword difficulty scores, it uses AI to evaluate six signals from the top 10 search results:
+Across the product, you will usually see three labels:
 
-| Signal | Good sign | Bad sign |
-|---|---|---|
-| Small sites or forums ranking | Smaller sites can compete | Only big brands dominate |
-| Mixed search intent | Google isn't sure — you can wedge in | Clear standard to beat |
-| Content format gap | Users want something results don't provide | Results already match |
-| Low-quality results | Thin or repetitive content — quality gap | Results are solid |
-| Strong competitors | No authority barriers | Official docs, .gov, giants |
-| Click-stealing SERP features | Organic results get clicks | Ads and panels push you down |
+| Label | Meaning |
+|---|---|
+| **Winnable** | There is a realistic opening here |
+| **Challenging** | Some signals look good, but competition is mixed |
+| **Skip** | RankEarly does not see a good opening right now |
 
-A keyword is **Winnable** when it has 3+ positive signals and at most 1 negative signal. Otherwise, it's **Skip**.
-
-### Verdicts
-
-Different research modes aggregate keyword-level results into higher-level verdicts.
-
-**Primary Term** counts how many queries (the term itself + its support queries) are winnable:
-
-| Verdict | Condition | Meaning |
-|---|---|---|
-| **Build** | 3+ winnable queries | Clear opportunity — multiple angles reinforce the term |
-| **Challenging** | 1-2 winnable queries | Mixed signals, some angles viable |
-| **Skip** | 0 winnable queries | No winnable queries in this cluster |
-
-**Topic Clusters** and **Content Angles** apply winnability at the topic level, evaluating whether the keyword cluster behind each topic has enough opportunity to justify writing it.
+[Winnability](/how-it-works/winnability) explains how those labels are applied in each workflow.
 
 ## Research modes
 
-RankEarly offers four research modes. Each answers a different question and can be used independently or together.
+RankEarly offers four research modes plus one downstream writing workflow.
 
-| Mode | Question it answers | Output |
+| Workflow | Question it answers | Output |
 |---|---|---|
-| **Primary Term** | "Which terms can I rank for?" | Up to 10 terms with winnability verdicts |
-| **Topic Clusters** | "What should I write about?" | Up to 10 pillars, each with subtopic clusters |
-| **Content Angles** | "How should I write about this?" | 5 content angles for a given idea |
-| **Keyword Expansion** | "What keywords exist for this idea?" | 100-500 keywords for bulk research |
+| **Keyword Expansion** | "What else do people search for around this idea?" | 100 to 500 keywords saved to your project |
+| **Primary terms** | "Which positioning terms can I realistically target?" | Ranked terms with support queries and verdicts |
+| **Topic clusters** | "How should I turn these keywords into a content plan?" | Pillars plus subtopics / keyword clusters |
+| **Content Angles** | "How should I approach this one idea?" | 5 content angles with verdicts |
+| **Content Brief** | "How do I turn a chosen keyword into a writing brief?" | A step-by-step brief with intent, format, must-includes, title, and outline |
 
-Keyword Expansion is usually the first step when you're starting from an idea and want a reusable keyword library. Other modes can still be run independently, but [Topic Clusters](/research/topic-clusters) and [Primary Term](/research/primary-term) are strongest when that library is already populated.
+Keyword Expansion is usually the first step when you are starting from an idea and want more search data to work from. [Primary terms](/research/primary-term) and [Topic clusters](/research/topic-clusters) are strongest after that. [Content Angles](/research/content-angles) can be used any time you already have one idea and need better framing.
 
-- **Starting from scratch?** Run Keyword Expansion first, then move into Topic Clusters or Primary Term depending on whether you want content planning or positioning.
-- **Have an idea and need framing?** Run Content Angles when you want to explore how to approach one specific topic.
-- **Strategy evolving?** Re-run any mode as your market, product, or priorities change.
+- **Starting from scratch?** Run Keyword Expansion first, then move into Topic Clusters or Primary terms depending on whether you want content planning or positioning.
+- **Have an idea and need framing?** Run Content Angles when you want to explore how to approach one specific article idea.
+- **Ready to write?** Launch Content Brief from a validated keyword, support query, or subtopic.
 
 ## Projects
 
-A project is the container for all your research. It stores your business context — product description, target audience, competitors, seed phrases — and every research mode uses it as input.
+A project is where all your research lives. It stores your business context, such as product description, target audience, competitors, business goals, and seed phrases.
 
-You can run any research mode multiple times within a project. Past results are saved in **Research History**, and you can bookmark specific findings to **Saved Items** for quick reference.
+Inside a project:
+
+- **Research History** keeps past runs so you can reopen or compare them later
+- **Saved Items** lets you bookmark specific terms, angles, and pillars that you want to keep working from
+- **Keyword libraries** keep the keywords and search results that later workflows use

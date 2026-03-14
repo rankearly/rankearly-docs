@@ -1,71 +1,67 @@
 ---
 title: "Keyword expansion"
-description: "Turn one content idea into 100-500 keywords for bulk research, pSEO planning, or feeding into external tools."
+description: "Turn one content idea into 100-500 keywords, save them into a keyword library, and reuse that data in later research."
 ---
 
-Keyword Expansion generates a large set of keywords from a single content idea. Unlike the other research modes that analyze winnability, Keyword Expansion focuses on **volume** — giving you a comprehensive keyword dataset to work with.
+Keyword Expansion is usually the first step in RankEarly research. It turns one idea into a broad keyword dataset, saves that data into a keyword library, and gives later workflows a reliable base to build on.
+
+That library becomes the foundation for later workflows such as content planning in [Topic Clusters](/research/topic-clusters) and positioning research in [Primary Term](/research/primary-term).
 
 ## When to use it
 
-- You need a keyword list for programmatic SEO (pSEO) pages
-- You're building a content calendar and want to see the full keyword landscape
-- You need raw keyword data to export into external tools or spreadsheets
-- You want to compare keyword coverage against competitors
+- You're starting research on a new topic, feature, or project
+- You want to build or refresh the keyword library for a project
+- You need broad keyword coverage for planning, pSEO, or exports
+- You want a reusable keyword base for content planning or positioning research
 
-### When not to use it
+## Keyword targets and credits
 
-- **Need to know what to write?** Use [Topic Clusters](/research/topic-clusters) instead
-- **Validating a specific idea?** Use [Content Angles](/research/content-angles) instead
-- **Finding positioning terms?** Use [Primary Term](/research/primary-term) instead
+Choose how many keywords you want returned:
+
+| Target keywords | Credits |
+|---|---|
+| 100 | 30 credits |
+| 200 | 40 credits |
+| 300 | 60 credits |
+| 400 | 80 credits |
+| 500 | 100 credits |
 
 ## How it works
 
 <Steps>
-  <Step title="Describe your idea">
-    Select an input type — community discussion, user feedback, customer question, content idea, feature request, or use case — and describe the idea you want to expand.
+  <Step title="Start from one idea">
+    Give RankEarly a content idea, feature, question, or other source concept you want to expand.
   </Step>
-  <Step title="Choose a keyword limit">
-    Select how many keywords you want:
-
-    | Limit | Credits |
-    |---|---|
-    | 100 keywords | 15 credits |
-    | 200 keywords | 20 credits |
-    | 300 keywords (default) | 30 credits |
-    | 400 keywords | 40 credits |
-    | 500 keywords | 50 credits |
+  <Step title="Expand the idea into keywords">
+    RankEarly refines the input, generates seed keywords, expands them into related keywords, and deduplicates the results into one dataset.
   </Step>
-  <Step title="Iterative expansion">
-    RankEarly refines your input, generates seed keywords, and fetches related keywords for each seed. If the target hasn't been reached, it generates a new batch of seeds and repeats — up to 9 iterations for 500 keywords.
-
-    Each batch takes about 5-10 seconds. Keywords are deduplicated across all batches.
+  <Step title="Save the results into your library">
+    The returned keywords, successful expanded seeds, and SERP snapshots are saved into the selected keyword library.
   </Step>
-  <Step title="Results">
-    The final keyword list is displayed in a table with four columns:
-
-    - **Keyword** — the keyword text
-    - **Search volume** — monthly search volume
-    - **KD** — keyword difficulty (0-100)
-    - **Intent** — Informational, Commercial, Transactional, or Navigational
+  <Step title="Use the library in later research">
+    Once the library is populated, it can power content planning in [Topic Clusters](/research/topic-clusters) or positioning research in [Primary Term](/research/primary-term).
   </Step>
 </Steps>
 
-## Exporting results
+## What you get
 
-You can export the keyword list as a CSV file. The export includes keyword text only (no metrics), formatted as `keywords-[timestamp].csv`.
+- A broad keyword set with metrics
+- Saved keywords and SERP snapshots inside your keyword library
+- A reusable base for content architecture planning and positioning research
+- Exportable keyword data for work outside RankEarly
 
-Results are static after generation — the table is view-only with no inline editing or filtering.
+A run can finish below the requested limit if the topic is narrow or too many expansions collapse into duplicates.
 
 ## Tips
 
 <AccordionGroup>
-  <Accordion title="Start with 300 keywords">
-    The default of 300 keywords is a good balance between coverage and cost. Go higher if you need comprehensive coverage for pSEO; go lower for a quick exploration of the keyword landscape.
+  <Accordion title="Treat Keyword Expansion as the starting point">
+    In most workflows, Keyword Expansion is the best first step because it creates the shared keyword library that later research modes depend on.
   </Accordion>
-  <Accordion title="Feed results into Topic Clusters">
-    Keyword Expansion gives you the raw data. If you want those keywords organized into a content plan with pillars and subtopics, follow up with [Topic Clusters](/research/topic-clusters) using a related input.
+  <Accordion title="Use a focused input">
+    Specific inputs usually produce tighter keyword sets. A focused idea like `AI keyword clustering for SaaS teams` gives cleaner results than a broad input like `SEO software`.
   </Accordion>
-  <Accordion title="Use specific inputs">
-    The more specific your input, the more relevant the keywords. "AI-powered keyword research tools" produces tighter results than "SEO tools."
+  <Accordion title="Choose a larger target only when you need broader coverage">
+    Start with `300` for most topics. Move to `400` or `500` when you're mapping a large market, planning pSEO at scale, or building a deeper export set.
   </Accordion>
 </AccordionGroup>

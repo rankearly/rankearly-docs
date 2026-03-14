@@ -1,67 +1,78 @@
 ---
 title: "Topic clusters"
-description: "Generate a structured content plan with up to 10 pillars and subtopics — each subtopic is one article to write, validated for relevance."
+description: "Turn an existing keyword library into content pillars and subtopics you can prioritize for your content plan."
 ---
 
-Topic Clusters surfaces content ideas you haven't thought of yet. You provide a topic or feature, and RankEarly generates up to 10 **content pillars**, each with 5-30 subtopic clusters. Every subtopic represents one article to write.
+Topic Clusters turns an existing keyword library into a structured content plan. It helps you analyze the keyword landscape around your project, group related search intents into article-sized subtopics, and prioritize the pillars that best fit what you want to rank for.
+
+Each subtopic is one article opportunity. Each pillar is the broader theme those articles support.
 
 ## When to use it
 
-- You need a full content plan, not just a single article idea
-- You want to build topical authority around a theme
-- You're starting content planning for a new product feature or vertical
+- You want a full content plan, not a single article idea
+- Your project already has a keyword library and you want to turn it into pillars
+- You want to understand which themes are most worth building content around
+
+## Before you start
+
+Before you run it:
+
+- Choose a keyword library that belongs to the same project
+- Make sure the library already contains keywords and saved SERP snapshots
+- Use [Keyword Expansion](/research/keyword-expansion) first if the project does not have a usable library yet
 
 ## How it works
 
 <Steps>
-  <Step title="Keyword expansion">
-    RankEarly generates up to 500 keywords from your input using iterative seed generation and keyword API lookups. High keyword difficulty (KD > 70) keywords are filtered out by default — you can disable this.
+  <Step title="Start from an existing keyword library">
+    Topic Clusters uses the keywords already stored in your keyword library instead of starting from scratch.
   </Step>
-  <Step title="SERP collection and clustering">
-    For each keyword, RankEarly fetches the top 10 Google results. Keywords with 3+ overlapping URLs in their top results are grouped into clusters. Each cluster represents one search intent — one article opportunity.
+  <Step title="Cluster related keywords">
+    RankEarly compares the stored SERP snapshots in that library and groups related keywords into clusters. Each cluster becomes one subtopic, which usually maps to one article to write.
   </Step>
-  <Step title="Pillar selection">
-    AI selects 10 content pillars from the clusters. Each pillar gets 1-3 **anchor clusters** that define its scope. A pillar is a broad theme (like "Win-Back Campaigns") with enough breadth to support multiple subtopics but enough specificity to stay distinct from other pillars.
+  <Step title="Organize clusters into pillars">
+    AI reviews the keyword clusters and groups the related subtopics into content pillars.
   </Step>
-  <Step title="Subtopic discovery">
-    For each pillar, AI extracts a one-liner subject that defines its focus, then finds 5-30 subtopic clusters that are relevant to that subject. Each subtopic is verified against the pillar's SERP data to filter out mismatches.
+  <Step title="Prioritize what to write">
+    Review the returned pillars and their subtopics to decide which themes best fit your project, your audience, and the areas where you can publish credible experience-backed content.
   </Step>
 </Steps>
 
 ## Reading the results
 
-Each pillar shows:
+Review each pillar as a theme and each subtopic as an article opportunity within that theme.
 
-- **Pillar name** — the overarching theme (e.g., "Content Writing")
-- **Subject** — a one-liner defining the topical focus
-- **Subtopics** — 5-30 keyword clusters, each representing one article to write
+Use the subtopic metrics and underlying keyword clusters to decide:
 
-Each subtopic includes:
+- which pillars best align with your project
+- which pillars best align with your project and expertise
+- which subtopics are the best first articles to write
+- which opportunities should move into a [content brief](/planning/content-brief)
 
-- The keywords in the cluster
-- Aggregated search volume
-- Average keyword difficulty
+## Saved pillars and research history
 
-You can expand any subtopic to view its full keyword list, SERP results, and create a [content brief](/planning/content-brief) directly from it.
+You can save the pillars you want to keep working from and revisit past Topic Clusters runs through research history later.
 
 ## What to do with the results
 
-**Save pillars** you want to pursue. Saved pillars persist across research sessions and retain their full keyword cluster data.
-
-**Plan your content calendar.** Each subtopic is one article. Start with the subtopics that have lower difficulty and higher search volume — these are your quickest wins.
-
-**Build topical authority.** The pillar-cluster structure maps directly to internal linking strategy. Write the pillar page first, then link each subtopic article back to it. This [helps Google understand content relationships](https://developers.google.com/search/docs/crawling-indexing/links-crawlable).
+- Save the pillars that match your product, audience, and expertise
+- Start with subtopics that combine lower KD with stronger search volume
+- Create a [content brief](/planning/content-brief) from the subtopics you plan to write next
+- Run Topic Clusters separately for different features or verticals if one library covers multiple themes
 
 ## Tips
 
 <AccordionGroup>
-  <Accordion title="Filter high-KD keywords">
-    The KD filter is on by default. It removes keywords with difficulty above 70, which produces cleaner results for new sites. If you're working with an established site or want the full picture, turn it off.
+  <Accordion title="Use the KD filter for cleaner early-stage plans">
+    The filter is on by default. It removes keywords above `KD 70`, which usually produces a more realistic plan for newer sites. Turn it off when you want the full market view or your site can compete on harder terms.
   </Accordion>
-  <Accordion title="Run it per feature">
-    For products with multiple features or verticals, run Topic Clusters once per feature. This gives you focused pillar structures instead of one large, mixed result.
+  <Accordion title="Topic Clusters depends on your library quality">
+    Topic Clusters reuses the keywords and SERP snapshots already saved in your library. If the library is thin or outdated, the pillars will be thin too.
+  </Accordion>
+  <Accordion title="Run it per feature or vertical">
+    If one project covers several features, industries, or audiences, run Topic Clusters on a focused library for each one. That keeps the pillars easier to name, save, and brief.
   </Accordion>
   <Accordion title="Topic Clusters vs Content Angles">
-    Use **Topic Clusters** when you need ideas — "what should I write about?" Use [Content Angles](/research/content-angles) when you already have an idea and need the best way to approach it — "how should I write about this?"
+    Use **Topic Clusters** when you want to plan what to write across a whole theme. Use [Content Angles](/research/content-angles) when you already know the topic and want the best framing for one article.
   </Accordion>
 </AccordionGroup>

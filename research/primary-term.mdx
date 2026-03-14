@@ -1,96 +1,104 @@
 ---
 title: "Primary term"
-description: "Find winnable terms for your positioning and product communication. RankEarly analyzes ~500 keywords and surfaces the terms you can actually rank for."
+description: "Use an existing keyword library to find ranked positioning terms you can save, compare, and support with content."
 ---
 
-Primary Term research helps you find the right **positioning terms** — the phrases you use in landing page headlines, taglines, meta titles, and ad copy. Each term gets a winnability verdict so you know which ones are worth targeting.
+Primary Term research helps you find **positioning terms**: short market or category phrases you can use in headlines, taglines, landing pages, and product messaging. You start from an existing keyword library, choose either your saved project context or one focused content idea, and RankEarly returns a ranked list of analyzed terms.
 
 ## When to use it
 
-- You're launching a new site and need to decide how to describe your product
-- You want to know which category terms you can realistically compete for
-- You need positioning language backed by search data, not guesswork
+- You're deciding how to position a product, feature, or site
+- You want several viable category terms backed by search data
+- You want to compare options before saving the ones that fit your messaging
+
+## What counts as a term
+
+Good terms are short market phrases:
+
+- `waterproof hiking shoes`
+- `invoice software for freelancers`
+- `SOC 2 compliance software`
+
+These are not good terms:
+
+- A content title like `How to choose waterproof hiking shoes`
+- A term that is too broad, like `shoes`
+- A brand-led phrase like `Nike waterproof shoes`
+
+Modifier variations such as `best AI content writer` and `top AI content writers` are grouped under the same core term instead of being treated as separate markets.
+
+## Before you start
+
+Open Primary Term research from your project home or the **Terms** page.
+
+Before you run it:
+
+- Select a keyword library that belongs to the same project
+- Make sure the library already contains keywords
 
 ## How it works
 
-Primary Term research runs in four steps, fully automated after you click **New Research**.
-
 <Steps>
-  <Step title="Keyword expansion">
-    RankEarly generates ~500 keywords from your project's seed phrases. It starts with 5 AI-generated seeds, fetches related keywords for each, and iterates until it reaches ~500 keywords.
-  </Step>
-  <Step title="Term extraction">
-    AI analyzes the full keyword set and extracts up to 10 candidate terms. Each term is a semantically distinct positioning phrase — modifier variations like "best X" and "top X" are grouped under the same term.
+  <Step title="Choose a library and source">
+    Select the keyword library, then choose one source:
 
-    Each candidate also gets up to 5 **support queries** — related keywords from the dataset that reinforce the term.
-  </Step>
-  <Step title="SERP gap analysis">
-    RankEarly fetches the top 10 Google results for every candidate term and all its support queries, then evaluates six opportunity signals for each:
+    - **Project Context** uses your saved project information
+    - **Content Idea** uses one focused subject you enter
 
-    - Are small sites or forums ranking?
-    - Is Google showing mixed intent?
-    - Is there a content format gap?
-    - Are results low quality?
-    - Are strong competitors dominating?
-    - Are SERP features stealing clicks?
-
-    See [winnability](/concepts#winnability) for the full signal breakdown.
+    Use **Project Context** when you want broader positioning ideas. Use **Content Idea** when you want terms around one narrow idea.
   </Step>
-  <Step title="Verdict">
-    Each term gets an overall verdict based on how many of its queries (term + support queries) are winnable:
+  <Step title="Extract candidate terms from library keywords">
+    RankEarly uses the keywords in your selected library to identify candidate terms and the support queries related to each term.
+  </Step>
+  <Step title="Analyze stored SERP snapshots">
+    Primary Term does not fetch live Google results during this workflow. It evaluates the SERP snapshots already stored in the selected library for the term and its support queries, using the same gap signals described in [winnability](/concepts#winnability).
+  </Step>
+  <Step title="Rank the terms">
+    Each term gets a verdict from the whole cluster, not only the head term. RankEarly looks at the term and its support queries together, then ranks the analyzed terms so the strongest options appear first.
 
     | Verdict | Condition | Meaning |
     |---|---|---|
-    | **Build** | 3+ winnable queries | Multiple angles reinforce the term — go for it |
-    | **Challenging** | 1-2 winnable queries | Some angles viable, but mixed signals |
-    | **Skip** | 0 winnable queries | No opportunity in this cluster right now |
-
-    The highest-scoring **Build** term is recommended as your primary term.
+    | **Winnable** | 3+ winnable queries across the term cluster | Strong opportunity across multiple related queries |
+    | **Challenging** | 1-2 winnable queries | Some support, but mixed competition |
+    | **Skip** | 0 winnable queries | No clear opening right now |
   </Step>
 </Steps>
 
 ## Reading the results
 
-### Recommended term
+The results page shows your terms in ranked order. Click any term to open the detail drawer, where you can review:
 
-The results page leads with one clear recommendation — the term with the highest winnability score. You'll see:
+- A short **Why This Term** summary
+- **Support Queries** that reinforce the term
+- The term's own analysis
+- Save or remove action
 
-- The term itself
-- **Overall verdict**: Build, Challenging, or Skip
-- **Term SERP**: Whether the term's own search results show opportunity
-- **Support queries**: How many of the support queries are winnable (e.g., "4/5 support queries viable")
-- **Search volume**
+To go deeper, create a [Content Brief](/planning/content-brief) from an expanded support-query card inside the drawer. You do not start a brief directly from the term card itself.
 
-### Alternatives
+## Saved terms and research history
 
-Below the recommendation, you'll find other terms with a **Build** verdict, ranked by winnability score then search volume. These are viable alternatives if the recommended term doesn't fit your positioning.
+Saved terms are project-wide, so you can come back to the strongest positioning options later. Research History on the **Terms** page lets you reopen past Primary Term runs.
 
-### All terms
+## What to do with the results
 
-The full list includes Challenging and Skip terms for users who want the complete picture or disagree with the recommendations.
+Save the terms that fit your positioning best. The first result is the highest-ranked option, but the workflow is designed for you to keep multiple viable terms and compare them across pages, messaging, and campaigns.
 
-## What to do with your terms
+Common next steps:
 
-Once you've identified winnable terms, use them in your positioning:
-
-- **Landing page headlines**: "The Best [Term] for [Audience]"
-- **Taglines**: "[Term] Built for [Audience]"
-- **Meta titles and descriptions** for SEO
-- **Ad copy** for paid campaigns
-- **Feature page headers** to match search intent
-
-You can save any term to your **Saved Terms** list for reference across research sessions.
+- Use saved terms in landing page headlines, taglines, feature page headers, and meta titles
+- Turn strong support queries into content briefs so supporting content can reinforce the term
+- Re-run the workflow with a different content idea or updated project context when your positioning changes
 
 ## Tips
 
 <AccordionGroup>
-  <Accordion title="Run it more than once">
-    Your first research gives you a baseline. As you refine your project context or learn more about your market, run Primary Term again with updated seeds to discover new opportunities.
+  <Accordion title="Keep your keyword library populated">
+    Primary Term depends on the keywords and saved SERP snapshots already in the selected library. If the library is thin, your term set will be thin too.
   </Accordion>
-  <Accordion title="Don't ignore Challenging terms">
-    A **Challenging** verdict means 1-2 support queries are winnable. If the term is a strong fit for your product, it might still be worth targeting — especially if you plan to build authority in that space over time.
+  <Accordion title="Save more than one term">
+    The first result is the best-ranked option, not an automatic final answer. Save a few strong terms and test them in messaging before committing.
   </Accordion>
-  <Accordion title="Terms and topics work together">
-    Your primary term tells you how to position your product. Use [Topic Clusters](/research/topic-clusters) or [Content Angles](/research/content-angles) to plan the content that builds authority around that term.
+  <Accordion title="Terms and topics do different jobs">
+    A term is the market you want to own. A topic is a content piece you publish. Use [Topic Clusters](/research/topic-clusters) or [Content Angles](/research/content-angles) when you want article ideas that support your chosen term.
   </Accordion>
 </AccordionGroup>

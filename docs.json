@@ -64,6 +64,17 @@
         ]
       },
       {
+        "tab": "Skills",
+        "groups": [
+          {
+            "group": "Skills",
+            "pages": [
+              "skills/overview"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Changelog",
         "groups": [
           {

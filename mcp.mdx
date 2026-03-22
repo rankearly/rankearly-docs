@@ -1,0 +1,22 @@
+---
+title: "RankEarly MCP"
+description: "Connect your AI agent to RankEarly's data and algorithms — live SERPs, keyword expansion, topic clustering — via OAuth, no API key needed."
+---
+
+Skills run the playbook. RankEarly MCP powers the data and algorithms — live SERPs, keyword expansion, topic clustering. Connect using OAuth, no API key needed.
+
+## Setup
+
+```bash
+claude mcp add --transport http rankearly-mcp https://rankearly.pro/api/mcp
+```
+
+## Available tools
+
+| Tool | Description |
+|------|-------------|
+| `scrape_serp` | Fetch live Google top-10 results for a query |
+| `expand_keywords` | Start async keyword expansion for a topic |
+| `cluster_keywords` | Group keywords into pillars and subtopics |
+| `get_research_status` | Poll async task status |
+| `fetch_data` | Read project and keyword library data |

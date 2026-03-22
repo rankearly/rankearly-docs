@@ -47,7 +47,8 @@
           {
             "group": "AI Agent",
             "pages": [
-              "skills"
+              "skills",
+              "mcp"
             ]
           }
         ]

@@ -43,6 +43,12 @@
               "how-it-works/serp-gap-analysis",
               "how-it-works/winnability"
             ]
+          },
+          {
+            "group": "AI Agent",
+            "pages": [
+              "skills"
+            ]
           }
         ]
       },
@@ -59,17 +65,6 @@
             "group": "Endpoints",
             "pages": [
               "api-reference/endpoint/keyword-expansion"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Skills",
-        "groups": [
-          {
-            "group": "Skills",
-            "pages": [
-              "skills/overview"
             ]
           }
         ]

@@ -7,9 +7,40 @@ Skills run the playbook. RankEarly MCP powers the data and algorithms — live S
 
 ## Setup
 
+You can connect RankEarly MCP from any MCP client that supports remote HTTP servers and OAuth.
+
+For most clients, use `https://www.rankearly.pro/api/mcp` as the remote MCP server URL.
+
+### Claude CLI
+
 ```bash
 claude mcp add --transport http rankearly-mcp https://rankearly.pro/api/mcp
 ```
+
+### Claude Desktop
+
+Follow Claude Desktop's [custom connector setup guide](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop).
+
+<Steps>
+  <Step title="Open connectors">
+    Click **Customize** in the Claude Desktop sidebar, then open **Connectors**.
+  </Step>
+  <Step title="Add a custom connector">
+    Click the **+** button and choose **Add custom connector**.
+  </Step>
+  <Step title="Enter the RankEarly connector details">
+    Set **Name** to `RankEarly` and **Remote MCP server URL** to `https://www.rankearly.pro/api/mcp`.
+  </Step>
+  <Step title="Save the connector">
+    Confirm the dialog to add the connector. RankEarly will then be available as a connector in Claude Desktop.
+  </Step>
+</Steps>
+
+<img
+  src="https://cdn.rankearly.pro/docs/claude-desktop-rankearly-connector.jpg"
+  alt="Claude Desktop custom connector dialog configured for the RankEarly MCP server"
+  width="520"
+/>
 
 ## Available tools
 

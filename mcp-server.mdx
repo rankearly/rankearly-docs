@@ -1,9 +1,9 @@
 ---
 title: "MCP Server"
-description: "Connect your AI agent to RankEarly's data and algorithms — live SERPs, keyword expansion, topic clustering — via OAuth, no API key needed."
+description: "Connect your AI agent to RankEarly's keyword libraries, SERP analysis, expansion, and clustering tools via OAuth, no API key needed."
 ---
 
-Skills run the playbook. RankEarly MCP powers the data and algorithms — live SERPs, keyword expansion, topic clustering. Connect using OAuth, no API key needed.
+Skills run the playbook. RankEarly MCP gives your agent direct access to keyword libraries, SERP analysis, keyword expansion, and clustering. Connect using OAuth, no API key needed.
 
 ## Setup
 
@@ -37,17 +37,51 @@ Follow Claude Desktop's [custom connector setup guide](https://support.claude.co
 </Steps>
 
 <img
-  src="https://cdn.rankearly.pro/docs/claude-desktop-rankearly-connector.jpg"
+  src="https://cdn.rankearly.pro/images/docs/claude-desktop-rankearly-connector.jpg"
   alt="Claude Desktop custom connector dialog configured for the RankEarly MCP server"
   width="520"
 />
 
 ## Available tools
 
-| Tool | Description |
-|------|-------------|
-| `scrape_serp` | Fetch live Google top-10 results for a query |
-| `expand_keywords` | Start async keyword expansion for a topic |
-| `cluster_keywords` | Group keywords into pillars and subtopics |
-| `get_research_status` | Poll async task status |
-| `fetch_data` | Read project and keyword library data |
+Most tools center on a keyword library. Your agent can add or refresh keywords, read existing keyword data, expand a topic into more keywords, cluster a library into content structure, and analyze saved SERPs.
+
+<Info>
+  You can refer to a keyword library by its name or ID -- your agent will resolve either one.
+</Info>
+
+### `list_projects`
+
+Lists your projects along with how many keyword libraries and research tasks each one contains. Use this when your agent needs to understand which projects you have before picking a library.
+
+### `create_keyword_library`
+
+Creates a new keyword library. Each library stores a shared country and language for every keyword inside it (defaults to US / English if not specified). The library is created in your most recently updated active project.
+
+### `list_keyword_libaries`
+
+Lists every keyword library across all your projects, including name, keyword count, country, and language. Use this when your agent needs to discover which library to work with.
+
+### `add_or_update_keyword`
+
+Fetches fresh SERP and keyword data for a keyword, then saves it into the selected library. If the keyword already exists, it gets updated; otherwise it's created. Use this when you want to add a keyword or refresh its data.
+
+### `get_keyword`
+
+Looks up a keyword in a library without changing anything. Use this when you just want to read the saved data.
+
+### `expand_keywords`
+
+Starts keyword expansion for a topic and saves discovered keywords into the selected library. The input can be a content idea, feature name, or any seed concept. Expansion runs in the background -- use `get_research_status` to check progress.
+
+### `get_research_status`
+
+Checks the status of a background task like keyword expansion. Returns the current status and a link where you can inspect the result.
+
+### `cluster_keywords`
+
+Groups keywords in a library into pillars and subtopics. Best used after the library already has keywords with SERP data, so you can turn it into a content structure you can prioritize.
+
+### `analyze_serp`
+
+Analyzes the SERP for a keyword in the selected library. Returns winnability signals that help you understand how competitive each ranking page is and where the opportunities are.

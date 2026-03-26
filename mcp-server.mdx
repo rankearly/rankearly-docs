@@ -50,6 +50,30 @@ Most tools center on a keyword library. Your agent can add or refresh keywords, 
   You can refer to a keyword library by its name or ID -- your agent will resolve either one.
 </Info>
 
+## Pricing and Credits
+
+Most MCP tools are free to call. Credits are only charged for tools that trigger paid upstream data fetches or heavy analysis work.
+
+| Tool | Credit cost |
+|------|-------------|
+| `list_projects` | Free |
+| `create_keyword_library` | Free |
+| `list_keyword_libaries` | Free |
+| `get_keyword` | Free |
+| `get_research_status` | Free |
+| `cluster_keywords` | Free |
+| `add_or_update_keyword` | 1 credit per successful refresh |
+| `expand_keywords` | 240 credits by default |
+| `analyze_serp` | 4 credits per analysis task |
+
+Notes:
+
+- `add_or_update_keyword` is charged only when RankEarly successfully fetches fresh keyword data and saves it.
+- `expand_keywords` currently starts the default 300-keyword expansion flow through MCP, so it is priced at the 300-keyword tier: 240 credits.
+- If `expand_keywords` later exposes keyword-limit selection in MCP, the credit cost should follow the same expansion tiers used elsewhere in RankEarly.
+- `analyze_serp` is charged when the analysis task is started successfully.
+- `get_research_status` is always free so agents can poll safely without accidental double charging.
+
 ### `list_projects`
 
 Lists your projects along with how many keyword libraries and research tasks each one contains. Use this when your agent needs to understand which projects you have before picking a library.

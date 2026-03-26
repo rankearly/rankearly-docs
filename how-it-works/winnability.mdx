@@ -1,64 +1,49 @@
 ---
 title: "Winnability"
-description: "How RankEarly turns keyword-level SERP analysis into Winnable, Challenging, and Skip verdicts."
+description: "How RankEarly reads SERP signals to decide whether a keyword looks realistically winnable."
 ---
 
-Winnability is how RankEarly answers the question: "Can I actually rank for this?" Across the product, you will see three labels: **Winnable**, **Challenging**, and **Skip**.
+Winnability is how RankEarly answers the question: "Can I actually rank for this?" The underlying check starts at the keyword level by looking at the current Google results and asking whether the SERP shows enough real openings to justify pursuing.
 
-## Keyword-level: Winnable or Skip
+At the keyword level, the verdict is binary: **Winnable** or **Hard to Win**. Higher-level workflows like [Primary Term](/research/primary-term) and [Content Angles](/research/content-angles) aggregate these keyword verdicts into three-tier labels (Winnable / Challenging / Hard to Win) based on how many support keywords are winnable.
 
-At the keyword level, [SERP gap analysis](/how-it-works/serp-gap-analysis) evaluates 6 signals from the top 10 Google results and produces a binary verdict:
+## Keyword-level signals
 
-- **Winnable**: 3+ opportunity signals and at most 1 barrier
-- **Skip**: Does not meet the threshold
+At the keyword level, RankEarly reviews the top Google results and checks seven signals.
 
-This per-keyword verdict is the building block. Research modes aggregate multiple keyword verdicts into higher-level decisions.
+### Positive signals
 
-## Primary Term verdicts
+These are signals that suggest a newer or lower-authority site may still have a realistic opening:
 
-Each candidate term has up to 6 queries: the term itself plus up to 5 support queries. The term verdict counts how many of these are winnable.
+| Signal | Why it matters |
+|---|---|
+| **Small sites, forums, or UGC in top 10** | Google is already allowing lower-authority pages to rank |
+| **Stale pages ranking high** | Fresher content may be enough to compete |
+| **Mixed search intent** | Google is not fully settled on one interpretation of the query |
+| **Content format gap** | Searchers may want a format the current results do not provide |
+| **Thin or generic content** | A stronger, more specific page can stand out |
 
-| Verdict | Condition | What it means |
-|---|---|---|
-| **Winnable** | 3+ queries winnable | Multiple angles support this term, so the opportunity looks strong |
-| **Challenging** | 1-2 queries winnable | Some angles work, but the signal is mixed |
-| **Skip** | 0 queries winnable | No winnable queries, so competition looks too strong right now |
+### Barrier signals
 
-**How terms are ranked:**
+These are signals that make ranking materially harder:
 
-1. Sort by total winnable queries (highest first), then by search volume
-2. The top **Winnable** term is recommended as your primary term
-3. Other **Winnable** terms are shown as alternatives
-4. **Challenging** and **Skip** terms are available in the full list
+| Signal | Why it matters |
+|---|---|
+| **High-authority domains dominate** | The SERP is controlled by brands, official docs, or other hard-to-displace sites |
+| **High keyword difficulty** | The keyword metric itself suggests a tougher ranking environment |
+
+## Verdict rule
+
+The snippet-based keyword check is intentionally simple:
+
+- **Winnable**: 3 or more positive signals and at most 1 barrier
+- **Hard to Win**: does not meet that threshold
+
+This is a quick screen, not a full content brief. It tells you whether the live SERP looks open enough to investigate further.
 
 <Tip>
-A **Challenging** term is not necessarily bad. If the term is central to your product, it may still be worth targeting over time, especially if one of its support queries looks strong.
+If you want deeper page-level analysis after the quick winnability check, use the [SERP Gap Analysis skill](https://www.rankearly.pro/skills/serp-gap-analysis) or create a [Content Brief](/planning/content-brief), depending on whether you want an agent-led analysis workflow or an in-product writing brief.
 </Tip>
-
-## Content Angles verdicts
-
-Each content angle has 6 keyword variations. The final verdict counts how many of those keywords are winnable.
-
-| Verdict | Condition | What it means |
-|---|---|---|
-| **Winnable** | 3+ keywords winnable | Most phrasings of this angle look promising |
-| **Challenging** | 1-2 keywords winnable | Some phrasings work, but competition is mixed |
-| **Skip** | 0 keywords winnable | None of the phrasings look like a good target right now |
-
-The results page shows all 5 angles with their verdicts. Pick the angle that combines the best winnability with the most relevance to your audience.
-
-## Topic Clusters verdicts
-
-Topic Clusters works differently from Primary Term and Content Angles. Instead of running SERP gap analysis on every keyword, it uses keyword difficulty (KD) and search volume as primary metrics for subtopics.
-
-Each subtopic cluster shows:
-- **Keywords** in the cluster
-- **Aggregated search volume** across all keywords
-- **Average KD** across the cluster
-
-Lower KD and higher volume clusters are your best bets. Use these metrics to prioritize which subtopics to write first.
-
-For deeper validation, you can create a [Content Brief](/planning/content-brief) from any subtopic, which runs full SERP scraping and intent analysis.
 
 ## Choosing what to target
 
@@ -68,13 +53,13 @@ Here's a practical framework for using verdicts across research modes:
   <Accordion title="Start with Winnable verdicts">
     **Winnable** results have the clearest path to ranking. For new sites especially, these are your best first targets.
   </Accordion>
-  <Accordion title="Don't write off Challenging">
-    **Challenging** means some signals are positive. If a term or angle is highly relevant to your product, it can still pay off as your site gains authority from earlier wins.
+  <Accordion title="Hard to Win doesn't mean impossible">
+    A **Hard to Win** verdict means the SERP doesn't show a clear opening right now. That does not mean the keyword is permanently off-limits. Competition changes over time, so it can be worth checking again later.
   </Accordion>
-  <Accordion title="Skip means skip (for now)">
-    A **Skip** verdict means no winnable queries were found. That does not mean the keyword is permanently off-limits. Competition changes over time, so it can be worth checking again later.
+  <Accordion title="Higher-level rollups add nuance">
+    Workflows like [Primary Term](/research/primary-term) and [Content Angles](/research/content-angles) aggregate multiple keyword verdicts into a three-tier label: **Winnable** (3+ winnable keywords), **Challenging** (1-2 winnable), or **Hard to Win** (none winnable). This helps you prioritize at a glance.
   </Accordion>
   <Accordion title="Combine modes for a full picture">
-    Use [Primary Term](/research/primary-term) to find your positioning terms, then [Topic Clusters](/research/topic-clusters) to plan content around them. If one article idea stands out, run [Content Angles](/research/content-angles) to find the best approach.
+    Use [Primary Term](/research/primary-term) to explore positioning terms, [Topic Clusters](/research/topic-clusters) to plan what to write, and [Content Brief](/planning/content-brief) when you are ready to turn a chosen keyword into a draft-ready brief.
   </Accordion>
 </AccordionGroup>

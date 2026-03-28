@@ -32,8 +32,8 @@
           {
             "group": "Content Planning",
             "pages": [
-              "planning/content-brief",
-              "planning/saved-items"
+              "library/overview",
+              "planning/content-brief"
             ]
           },
           {

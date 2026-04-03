@@ -85,6 +85,29 @@ If your balance is below an effort's threshold, that option is disabled. Credits
 - SERP snapshots showing who ranks for each keyword
 - Exportable keyword lists for spreadsheets or other tools
 
+## Using with AI Agents
+
+You can run keyword expansion directly from AI Agents using the `topic-research` skill. The skill infers everything from your request — no need to specify parameters explicitly.
+
+Just describe what you want:
+
+```
+Expand keywords for "email deliverability tools for cold outreach" into my SEO library
+```
+
+Or provide seed keywords:
+
+```
+Expand these seeds: email warmup, cold email software, deliverability testing
+```
+
+The skill automatically:
+- **Infers input mode** — topic description vs. comma-separated keywords
+- **Infers effort level** — based on topic breadth or seed count (defaults to Medium)
+- **Resolves your keyword library** — by name or ID
+
+You can also reference local files, URLs, or documents as your topic source, and the skill will read and convert them into a focused topic description.
+
 ## Tips
 
 <AccordionGroup>

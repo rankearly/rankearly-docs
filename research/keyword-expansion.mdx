@@ -1,71 +1,100 @@
 ---
 title: "Keyword expansion"
-description: "Turn one content idea into 100-500 keywords, save them into a keyword library, and reuse that data in later research."
+description: "Turn a topic or seed list into a collection of related keywords, save them into a keyword library, and reuse that data in later research."
 ---
 
-Keyword Expansion is usually the first step in RankEarly research. It turns one idea into a broad keyword dataset, saves that data into a keyword library, and gives later workflows a reliable base to build on.
+Keyword Expansion is usually the first step in RankEarly research. You start with a topic idea or a list of seed keywords, and RankEarly finds related keywords people actually search for. Everything gets saved into your keyword library — which feeds into [Topic Clusters](/research/topic-clusters) for content planning and [Primary Term](/research/primary-term) for positioning research.
 
-That library becomes the foundation for later workflows such as content planning in [Topic Clusters](/research/topic-clusters) and positioning research in [Primary Term](/research/primary-term).
+## Two ways to start
 
-## When to use it
+### Topic mode (default)
 
-- You're starting research on a new topic, feature, or project
-- You want to build or refresh the keyword library for a project
-- You need broad keyword coverage for planning, pSEO, or exports
-- You want a reusable keyword base for content planning or positioning research
+Describe what you want to target in your own words. This can be:
 
-## Keyword targets and credits
+- A content idea you're considering
+- A product feature you want to promote
+- A use case for your product
+- Community discussions or user feedback
+- Anything that defines a subject you want to rank for
 
-Choose how many keywords you want returned:
+RankEarly reads your description and generates seed keywords to expand from. The more specific your description, the more focused your results.
 
-| Target keywords | Credits |
-|---|---|
-| 100 | 120 credits |
-| 200 | 160 credits |
-| 300 | 240 credits |
-| 400 | 320 credits |
-| 500 | 400 credits |
+**Example:** "Email deliverability tools for cold outreach" produces tighter results than just "email tools."
+
+### Keywords mode
+
+Already know which keywords you want to target? Paste them directly as a comma-separated list. RankEarly expands exactly what you provide — no AI interpretation step.
+
+This is useful when you've already done keyword research elsewhere, have competitor keywords to expand on, or prefer full control over the starting point.
+
+**Example:** Paste "email warmup, cold email software, deliverability testing" and RankEarly finds related keywords for each.
+
+## Search effort levels
+
+Instead of requesting a specific keyword count, you choose how broad the search should be. The effort level determines how many seed keywords RankEarly works from — more seeds mean wider coverage.
+
+| Effort | Seeds | Best For |
+|--------|-------|----------|
+| Ultra Low | 1 | One specific keyword you want to expand |
+| Low | 5 | Niche topics or focused discovery |
+| Medium | 10 | Most common topics — a good starting point |
+| High | 20 | Broad topics with many angles to explore |
+| Ultra High | 30 | Full category research, large-scale pSEO planning |
+
+**Medium is the default** and works well for most topics. Go higher when mapping an entire market. Go lower when you want focused results around a specific term.
+
+### Credit requirements
+
+Each effort level requires a minimum credit balance to start:
+
+| Effort | Min. Credits |
+|--------|--------------|
+| Ultra Low | 100 |
+| Low | 400 |
+| Medium | 800 |
+| High | 1,500 |
+| Ultra High | 2,500 |
+
+If your balance is below an effort's threshold, that option is disabled. Credits are charged after the run completes — not upfront.
 
 ## How it works
 
-<img src="https://cdn.rankearly.pro/images/docs/screenshot-keyword-expansion-modal.jpg" alt="Keyword expansion modal where you enter your idea and select target keyword count" width="500" />
+<img src="https://cdn.rankearly.pro/images/docs/screenshot-keyword-expansion-modal.jpg" alt="Keyword expansion modal where you enter your idea and select search effort" width="500" />
 
 <Steps>
-  <Step title="Start from one idea">
-    Give RankEarly a content idea, feature, question, or other source concept you want to expand.
+  <Step title="Start with a topic or your own seeds">
+    Describe what you want to target in Topic mode, or paste a comma-separated list of keywords in Keywords mode.
   </Step>
-  <Step title="Expand the idea into keywords">
-    RankEarly refines the input, generates seed keywords, expands them into related keywords, and deduplicates the results into one dataset.
+  <Step title="Choose your search effort">
+    Pick an effort level based on how broad you want the discovery to be. Higher effort means more seeds and wider coverage.
   </Step>
-  <Step title="Save the results into your library">
-    The returned keywords, successful expanded seeds, and SERP snapshots are saved into the selected keyword library.
+  <Step title="RankEarly finds related keywords">
+    For each seed keyword, RankEarly finds related search terms, checks search volume and difficulty, and removes duplicates.
   </Step>
-  <Step title="Use the library in later research">
-    Once the library is populated, it can power content planning in [Topic Clusters](/research/topic-clusters) or positioning research in [Primary Term](/research/primary-term).
+  <Step title="SERP data is collected">
+    For every keyword returned, RankEarly captures a snapshot of the current Google search results — so you can see who's ranking.
+  </Step>
+  <Step title="Everything saves to your library">
+    Keywords, seeds, and SERP snapshots are saved into your selected keyword library. Each run adds to the library — run multiple expansions for different topics and the library grows over time.
   </Step>
 </Steps>
 
 ## What you get
 
-- A broad keyword set with metrics
-- Saved keywords and SERP snapshots inside your keyword library
-- A reusable base for content architecture planning and positioning research
-- Exportable keyword data for work outside RankEarly
-
-A run can finish below the requested limit if the topic is narrow or too many expansions collapse into duplicates.
-
-![Keyword expansion results showing a list of keywords with search volume and difficulty metrics](https://cdn.rankearly.pro/images/docs/screenshot-keywords-view.jpg)
+- A collection of related keywords with search volume, difficulty, and intent data
+- SERP snapshots showing who ranks for each keyword
+- Exportable keyword lists for spreadsheets or other tools
 
 ## Tips
 
 <AccordionGroup>
-  <Accordion title="Treat Keyword Expansion as the starting point">
-    In most workflows, Keyword Expansion is the best first step because it creates the shared keyword library that later research modes depend on.
+  <Accordion title="Start with Keyword Expansion">
+    In most workflows, this is the best first step. It populates your keyword library, which other research modes depend on.
   </Accordion>
-  <Accordion title="Use a focused input">
-    Specific inputs usually produce tighter keyword sets. A focused idea like `AI keyword clustering for SaaS teams` gives cleaner results than a broad input like `SEO software`.
+  <Accordion title="Run multiple expansions into the same library">
+    Each run adds new keywords to your library. You can run Keyword Expansion multiple times for different topics within the same market — the library grows with each run.
   </Accordion>
-  <Accordion title="Choose a larger target only when you need broader coverage">
-    Start with `300` for most topics. Move to `400` or `500` when you're mapping a large market, planning pSEO at scale, or building a deeper export set.
+  <Accordion title="Match effort to your actual need">
+    Don't default to the highest effort. If you're researching a niche topic, Low or Medium is usually enough. Save High and Ultra High for when you're mapping a broad category.
   </Accordion>
 </AccordionGroup>

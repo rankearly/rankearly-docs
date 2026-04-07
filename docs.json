@@ -18,7 +18,8 @@
             "pages": [
               "index",
               "quickstart",
-              "concepts"
+              "concepts",
+              "glossary"
             ]
           },
           {
@@ -46,7 +47,8 @@
             "group": "AI Agent",
             "pages": [
               "skills",
-              "mcp-server"
+              "mcp-server",
+              "best-practices/content-writing"
             ]
           }
         ]

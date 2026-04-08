@@ -9,19 +9,29 @@ A word or phrase that people type into a search engine. "Email deliverability" i
 
 ## Keyword Cluster
 
-A group of keywords that mean roughly the same thing or that Google treats as the same topic. For example, "email deliverability tips," "how to improve email delivery," and "why emails go to spam" would likely belong to one cluster — because Google shows similar results for all of them.
+A group of keywords that Google treats as the same query — meaning they return very similar search results. For example, "best project management tools," "top project management software," and "project management tools for teams" would likely belong to one cluster because Google shows nearly the same pages for all of them.
 
-RankEarly groups keywords into clusters automatically so you don't waste time writing separate posts for queries that Google already considers the same topic.
+RankEarly uses SERP-similarity clustering: it compares the actual search results for each keyword, and if two keywords share most of the same top-ranking pages, they go into the same cluster. This way you don't waste time writing separate posts for queries that Google already answers with the same results.
 
 ## Topic Cluster
 
-A broader content strategy structure. A topic cluster is a set of keyword clusters that all relate to the same subject area. For example, "email deliverability" as a topic might include keyword clusters around authentication (SPF, DKIM), sender reputation, list hygiene, and inbox placement.
+A set of keyword clusters that all relate to the same broad subject. For example, "project management" as a topic might include keyword clusters around task tracking, team collaboration, Gantt charts, and agile workflows.
 
-In practice, you'd build a topic cluster by creating a pillar page for the broad subject and linking it to individual blog posts that cover each keyword cluster in depth.
+A topic cluster is built bottom-up from keyword clusters — it represents how your content maps to a subject area. To target a topic cluster on your site, you'd follow the [pillar-cluster model](#pillar-cluster-model): write cluster pages for each keyword cluster first, then grow a pillar page over time that ties them together.
+
+## Pillar-Cluster Model
+
+A content strategy where one broad pillar page links to multiple focused cluster pages, and each cluster page links back to the pillar. The pillar covers the topic at a high level; the cluster pages go deep on each subtopic.
+
+The recommended approach is to write cluster pages first — each targeting a specific keyword cluster — and then build the pillar page iteratively as your cluster content grows. This way the pillar has real depth to link to from day one. Also known as the [hub-and-spoke model](#hub-and-spoke-model).
+
+## Hub-and-Spoke Model
+
+Another name for the [pillar-cluster model](#pillar-cluster-model). The "hub" is the pillar page (covering the broad topic), and the "spokes" are the cluster pages (each covering a subtopic in depth). Every spoke links back to the hub, and the hub links out to all spokes — creating a tightly interlinked content structure that signals topical authority to search engines.
 
 ## Pillar Page
 
-A page that covers a broad topic at a high level and links out to more detailed posts on subtopics. It acts as the hub of a topic cluster. For example, a pillar page on "Email Deliverability" would summarize authentication, sender reputation, and list hygiene — then link to dedicated blog posts that go deep on each.
+A page that covers a broad topic at a high level and links out to more detailed cluster pages on subtopics. It acts as the hub in a [pillar-cluster model](#pillar-cluster-model). For example, a pillar page on "Project Management" would summarize task tracking, team collaboration, and agile workflows — then link to dedicated blog posts that go deep on each.
 
 ## Information Gain
 
@@ -35,7 +45,7 @@ Search Engine Results Page — the page Google shows after you search for someth
 
 ## Topical Authority
 
-The idea that search engines trust sites that cover a subject thoroughly. A site with 15 well-linked posts on email deliverability signals more expertise than a site with one general post. Building topical authority is the main reason to create content groups rather than standalone posts.
+The idea that search engines trust sites that cover a subject thoroughly. A site with 15 well-linked posts on project management signals more expertise than a site with one general post. Building topical authority is the main reason to create topic clusters rather than standalone posts.
 
 ## Under-Discussed Questions
 

@@ -1,15 +1,17 @@
 ---
 title: "Introduction"
-description: "RankEarly is a content strategy builder for new sites. Research what to write, how to position it, and which ideas are worth briefing before you invest in content."
+description: "Know what to write from real search data, then turn it into content with AI."
 ---
 
 ## What is RankEarly?
 
-Most SEO tools need months of traffic data to be useful. RankEarly is built for cold-start projects, when you have little or no traffic but still need to decide what to write.
+Most SEO tools leave you in a dashboard. RankEarly is built for a more autonomous workflow — it helps you know what to write from real search data, then AI carries the work forward by researching, drafting, assessing, and polishing the content.
 
-Instead of guessing at topics and wasting weeks on content that will not rank, you validate your decisions upfront with keyword data, real search results, and AI analysis.
+If you are starting from scratch or working with thin traffic data, RankEarly helps you make decisions before you waste weeks on the wrong content.
 
-RankEarly gives you four research modes plus one downstream brief workflow:
+RankEarly ships as a web platform and an agent skills bundle you can install in Claude, Codex, OpenClaw, or any MCP-compatible agent.
+
+### Platform workflows
 
 <CardGroup cols={2}>
   <Card title="Keyword expansion" icon="expand" href="/research/keyword-expansion">
@@ -21,12 +23,37 @@ RankEarly gives you four research modes plus one downstream brief workflow:
   <Card title="Topic clusters" icon="diagram-project" href="/research/topic-clusters">
     Turn a keyword library into content pillars and subtopics you can prioritize and brief later.
   </Card>
+  <Card title="SERP gap analysis" icon="magnifying-glass-chart" href="/research/serp-gap-analysis">
+    See whether a topic is worth pursuing before you spend time writing.
+  </Card>
   <Card title="Content brief" icon="file-pen" href="/planning/content-brief">
-    Turn a validated keyword or subtopic into a step-by-step brief with intent, format, must-includes, titles, and outline.
+    Turn a validated keyword or subtopic into a step-by-step brief with intent, format, must-haves, titles, and outline.
   </Card>
 </CardGroup>
 
-Each workflow can stand alone, but they work best together when your strategy is evolving.
+### Agent skills
+
+RankEarly also ships as a skills bundle for AI agents. Your agent handles research, drafting, E-E-A-T assessment, and polishing — you maintain the SEO memory, choose the angle, and review the result.
+
+<CardGroup cols={2}>
+  <Card title="topic-research" icon="seedling" href="https://www.rankearly.pro/skills/topic-research">
+    Find what to write by expanding topics and organizing them into pillars and subtopics.
+  </Card>
+  <Card title="serp-gap-analysis" icon="magnifying-glass-chart" href="https://www.rankearly.pro/skills/serp-gap-analysis">
+    Validate whether a keyword or topic is worth writing before you commit.
+  </Card>
+  <Card title="content-researcher" icon="book-open-reader" href="https://www.rankearly.pro/skills/content-researcher">
+    Gather what current ranking content covers and spot gaps your content can fill.
+  </Card>
+  <Card title="blog-creator" icon="pen-nib" href="https://www.rankearly.pro/skills/blog-creator">
+    Create SEO blog posts — research, outline, and full writing.
+  </Card>
+  <Card title="seo-memory" icon="brain" href="https://www.rankearly.pro/skills/seo-memory">
+    Keep product context, positioning, and customer language consistent across every workflow.
+  </Card>
+</CardGroup>
+
+Each workflow can stand alone, but they work best when combined end to end.
 
 ## How the workflow fits together
 
@@ -38,22 +65,23 @@ Each workflow can stand alone, but they work best together when your strategy is
     Run [Keyword Expansion](/research/keyword-expansion) to create or extend a project keyword library. This is usually the first step before Primary terms and Topic clusters.
   </Step>
   <Step title="Run the right research">
-    Use [Primary terms](/research/primary-term) for positioning or [Topic clusters](/research/topic-clusters) for content planning.
+    Use [Primary terms](/research/primary-term) for positioning, [Topic clusters](/research/topic-clusters) for content planning, or [SERP gap analysis](/research/serp-gap-analysis) to validate whether a topic is worth pursuing.
   </Step>
-  <Step title="Turn winners into briefs">
-    Launch [Content Brief](/planning/content-brief) from a subtopic, support query, or keyword when you are ready to turn research into a draftable plan.
+  <Step title="Turn winners into content">
+    Launch [Content Brief](/planning/content-brief) from a subtopic or keyword. If you use agent skills, the brief flows directly into research, drafting, assessment, and polishing.
   </Step>
 </Steps>
 
 ## Who is it for?
 
-RankEarly is for builders who want a guided content strategy workflow instead of a keyword dashboard:
+RankEarly is for people who want guided workflows instead of a keyword dashboard:
 
-- **Early-stage startup founders** building content-led growth
-- **Indie hackers and solo entrepreneurs** who need a plan, not just keyword exports
+- **Founders and solo marketers** building content without a full SEO team
+- **Lean teams** that need a plan, not just keyword exports
 - **New or low-authority sites** where Google Search Console data is thin or nonexistent
+- **AI-agent users** who want SEO research and writing inside the tools they already use
 
-RankEarly is not built for enterprise SEO teams that need mature reporting, GSC integrations, or large agency workflows. It is optimized for new-site builders who need to make better decisions early.
+RankEarly is not built for enterprise SEO teams that need mature reporting, GSC integrations, or large agency workflows. It is optimized for people who need better content decisions early.
 
 ## Next steps
 
@@ -61,7 +89,7 @@ RankEarly is not built for enterprise SEO teams that need mature reporting, GSC 
   <Card title="Quickstart" icon="rocket" href="/quickstart">
     Create your first project, build a keyword library, and choose the right next workflow.
   </Card>
-  <Card title="Core concepts" icon="book" href="/concepts">
-    Understand terms, pillars, subtopics, keyword libraries, and how RankEarly evaluates opportunity.
+  <Card title="Glossary" icon="book" href="/glossary">
+    Look up terms, pillars, subtopics, keyword libraries, winnability, and other concepts used across the docs.
   </Card>
 </CardGroup>

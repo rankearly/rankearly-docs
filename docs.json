@@ -18,28 +18,17 @@
             "pages": [
               "index",
               "quickstart",
-              "concepts",
               "glossary"
             ]
           },
           {
-            "group": "Research Modes",
+            "group": "Content Strategy",
             "pages": [
+              "research/keyword-expansion",
+              "keyword-library",
               "research/primary-term",
               "research/topic-clusters",
-              "research/keyword-expansion"
-            ]
-          },
-          {
-            "group": "Content Planning",
-            "pages": [
-              "keyword-library",
-              "planning/content-brief"
-            ]
-          },
-          {
-            "group": "How It Works",
-            "pages": [
+              "planning/content-brief",
               "how-it-works/winnability"
             ]
           },

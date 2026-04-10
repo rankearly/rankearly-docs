@@ -3,7 +3,7 @@ title: "MCP Server"
 description: "Connect your AI agent to RankEarly's keyword libraries, SERP analysis, expansion, and clustering tools via OAuth, no API key needed."
 ---
 
-Skills run the playbook. RankEarly MCP gives your agent direct access to keyword libraries, SERP analysis, keyword expansion, clustering, and pillar management. Connect using OAuth, no API key needed.
+Skills run the playbook. RankEarly MCP gives your agent direct access to keyword libraries, SERP analysis, keyword expansion, clustering, and topic management. Connect using OAuth, no API key needed.
 
 ## Setup
 
@@ -44,7 +44,7 @@ Follow Claude Desktop's [custom connector setup guide](https://support.claude.co
 
 ## Available tools
 
-Most tools center on a keyword library. Your agent can add or refresh keywords, read existing keyword data, expand a topic into more keywords, cluster a library into content structure, analyze saved SERPs, and manage pillars.
+Most tools center on a keyword library. Your agent can add or refresh keywords, read existing keyword data, expand a topic into more keywords, cluster a library into content structure, analyze saved SERPs, and manage topics.
 
 <Info>
   You can refer to a keyword library by its name or ID -- your agent will resolve either one.
@@ -62,9 +62,9 @@ Most MCP tools are free to call. Credits are only charged for tools that trigger
 | `get_keyword` | Free |
 | `get_research_status` | Free |
 | `cluster_keywords` | Free |
-| `list_pillars` | Free |
-| `get_pillar_details` | Free |
-| `delete_pillars` | Free |
+| `list_topics` | Free |
+| `get_topic_details` | Free |
+| `delete_topics` | Free |
 | `add_or_update_keyword` | 1 credit per successful refresh |
 | `expand_keywords` | 240 credits by default |
 | `analyze_serp` | 4 credits per analysis task |
@@ -107,20 +107,20 @@ Checks the status of a background task like keyword expansion. Returns the curre
 
 ### `cluster_keywords`
 
-Groups keywords in a library into pillars and subtopics. Best used after the library already has keywords with SERP data, so you can turn it into a content structure you can prioritize.
+Groups keywords in a library into topics and keyword clusters. Best used after the library already has keywords with SERP data, so you can turn it into a content structure you can prioritize.
 
 ### `analyze_serp`
 
 Analyzes the SERP for a keyword in the selected library. Returns winnability signals that help you understand how competitive each ranking page is and where the opportunities are.
 
-### `list_pillars`
+### `list_topics`
 
-Lists all pillars in a keyword library. Returns each pillar's name, cluster count, and description. Use this to see the content structure that clustering has produced.
+Lists all topics in a keyword library. Returns each topic's name, cluster count, and description. Use this to see the content structure that clustering has produced.
 
-### `get_pillar_details`
+### `get_topic_details`
 
-Gets detailed information about a specific pillar, including its name, description, and all keyword clusters with their keywords. Use this when you need to see the full structure of a pillar.
+Gets detailed information about a specific topic, including its name, description, and all keyword clusters with their keywords. Use this when you need to see the full structure of a topic.
 
-### `delete_pillars`
+### `delete_topics`
 
-Deletes one or more pillars from a keyword library by their names. Use this to remove unwanted content structures.
+Deletes one or more topics from a keyword library by their names. Use this to remove unwanted content structures.

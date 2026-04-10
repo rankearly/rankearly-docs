@@ -1,15 +1,15 @@
 ---
-title: "Topic clusters"
-description: "Turn an existing keyword library into topics and keyword clusters you can prioritize for your content plan."
+title: "Topic Clustering"
+description: "Turn an existing keyword library into keyword clusters and broader topics you can use as a topical map."
 ---
 
-Topic Clusters turns an existing keyword library into a structured content plan. It helps you analyze the keyword landscape around your project, group related search intents into article-sized keyword clusters, and prioritize the topics that best fit what you want to rank for.
+Topic Clustering turns an existing keyword library into a topical map. It groups keywords into keyword clusters based on SERP similarity, then uses an NLP clustering step to group those keyword clusters into broader topics.
 
-Each keyword cluster is one article opportunity. Each topic is the broader theme those articles support.
+Each keyword cluster is a group of keywords that share a similar SERP. Each topic is a broader theme made up of one or more keyword clusters.
 
 ## When to use it
 
-- You want a full content plan, not a single article idea
+- You want a topical map, not a single article idea
 - Your project already has a keyword library and you want to turn it into topics
 - You want to understand which themes are most worth building content around
 
@@ -18,58 +18,62 @@ Each keyword cluster is one article opportunity. Each topic is the broader theme
 Before you run it:
 
 - Choose a keyword library that belongs to the same project
-- Make sure the library already contains keywords and saved SERP snapshots
+- Make sure the library already contains keywords
 - Use [Keyword Expansion](/research/keyword-expansion) first if the project does not have a usable library yet
 
 ## How it works
 
 <Steps>
   <Step title="Start from an existing keyword library">
-    Topic Clusters uses the keywords already stored in your keyword library instead of starting from scratch.
+    Topic Clustering uses the keywords already stored in your keyword library.
   </Step>
   <Step title="Cluster related keywords">
-    RankEarly compares the stored SERP snapshots in that library and groups related keywords into clusters. Each cluster becomes one keyword cluster, which usually maps to one article to write.
+    RankEarly compares the SERPs for keywords in that library and groups together keywords whose search results materially overlap. That forms your keyword clusters. The label for each keyword cluster comes from the highest-volume keyword inside that cluster.
   </Step>
   <Step title="Organize clusters into topics">
-    AI reviews the keyword clusters and groups the related keyword clusters into topics.
+    RankEarly then uses an NLP algorithm to group related keyword clusters into broader topics. This step is conservative by design: it prefers leaving weak matches separate instead of forcing them into the same topic.
   </Step>
   <Step title="Prioritize what to write">
-    Review the returned topics and their keyword clusters to decide which themes best fit your project, your audience, and the areas where you can publish credible experience-backed content.
+    Review the returned topics and keyword clusters to decide which areas best fit your project, your audience, and the places where you can publish credible experience-backed content.
   </Step>
 </Steps>
 
 ## Reading the results
 
-Review each topic as a theme and each keyword cluster as an article opportunity within that theme.
+Review each topic as a group of related keyword clusters. Review each keyword cluster as a group of closely related searches.
+
+Topic names come from the most central keyword cluster inside that topic. Treat them as working labels, not final page titles.
 
 Use the keyword cluster metrics and underlying keyword clusters to decide:
 
 - which topics best align with your project
 - which topics best align with your project and expertise
-- which keyword clusters are the best first articles to write
+- which keyword clusters are the best places to start
 - which opportunities should move into a [content brief](/planning/content-brief)
 
-## Saved topics and research history
+## Where topics are saved
 
-You can save the topics you want to keep working from and revisit past Topic Clusters runs through research history later.
+Topics are saved to the keyword library. When you run Topic Clustering again for the same library, the new run replaces the previous topics for that library.
 
 ## What to do with the results
 
 - Save the topics that match your product, audience, and expertise
 - Start with keyword clusters that combine lower KD with stronger search volume
 - Create a [content brief](/planning/content-brief) from the keyword clusters you plan to write next
-- Run Topic Clusters separately for different features or verticals if one library covers multiple themes
 
 ## Tips
 
 <AccordionGroup>
   <Accordion title="Use the KD filter for cleaner early-stage plans">
-    The filter is on by default. It removes keywords above `KD 70`, which usually produces a more realistic plan for newer sites. Turn it off when you want the full market view or your site can compete on harder terms.
+    The filter is on by default. It removes keywords above `KD 70`, which usually produces a more realistic topical map for newer sites. Turn it off when you want the full market view or your site can compete on harder terms.
   </Accordion>
-  <Accordion title="Topic Clusters depends on your library quality">
-    Topic Clusters reuses the keywords and SERP snapshots already saved in your library. If the library is thin or outdated, the topics will be thin too.
+  <Accordion title="Topic Clustering depends on your library quality">
+    Topic Clustering reuses the keywords and SERP snapshots already saved in your library. If the library is thin or outdated, the topical map will be thin too.
   </Accordion>
-  <Accordion title="Run it per feature or vertical">
-    If one project covers several features, industries, or audiences, run Topic Clusters on a focused library for each one. That keeps the topics easier to name, save, and brief.
+  <Accordion title="Build the library from multiple angles before clustering">
+    Topic Clustering works best when the library already covers different angles of the same market. Run Keyword Expansion across features, audiences, and business angles first, then run Topic Clustering on that fuller library.
+  </Accordion>
+  <Accordion title="Re-running replaces the previous topics">
+    Topic Clustering does not keep multiple topic sets for the same library. If you want a different topical map, duplicate or create a separate library first.
   </Accordion>
 </AccordionGroup>

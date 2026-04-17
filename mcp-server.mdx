@@ -44,7 +44,7 @@ Follow Claude Desktop's [custom connector setup guide](https://support.claude.co
 
 ## Available tools
 
-Most tools center on a keyword library. Your agent can add or refresh keywords, read existing keyword data, expand a topic into more keywords, cluster a library into content structure, analyze saved SERPs, and manage topics.
+Most tools center on a keyword library. Your agent can add or refresh keywords, read existing keyword data, expand a topic into more keywords, cluster a library into content structure, analyze saved SERPs, manage topics, and audit content quality.
 
 <Info>
   You can refer to a keyword library by its name or ID -- your agent will resolve either one.
@@ -66,15 +66,16 @@ Most MCP tools are free to call. Credits are only charged for tools that trigger
 | `get_topic_details` | Free |
 | `delete_topics` | Free |
 | `add_or_update_keyword` | 1 credit per successful refresh |
-| `expand_keywords` | 240 credits by default |
-| `analyze_serp` | 4 credits per analysis task |
+| `expand_keywords` | 8 credits per seed + 1 credit per keyword returned |
+| `analyze_serp` | 8 credits per analysis |
+| `audit_content_quality` | 80 credits per audit |
 
 Notes:
 
 - `add_or_update_keyword` is charged only when RankEarly successfully fetches fresh keyword data and saves it.
-- `expand_keywords` currently starts the default 300-keyword expansion flow through MCP, so it is priced at the 300-keyword tier: 240 credits.
-- If `expand_keywords` later exposes keyword-limit selection in MCP, the credit cost should follow the same expansion tiers used elsewhere in RankEarly.
+- `expand_keywords` charges 8 credits per seed used plus 1 credit per keyword returned. The number of seeds depends on the effort level you choose (see below). Choosing a higher effort means more seeds and a larger estimated keyword range.
 - `analyze_serp` is charged when the analysis task is started successfully.
+- `audit_content_quality` is charged per audit run regardless of pass or fail.
 - `get_research_status` is always free so agents can poll safely without accidental double charging.
 
 ### `list_projects`
@@ -99,11 +100,28 @@ Looks up a keyword in a library without changing anything. Use this when you jus
 
 ### `expand_keywords`
 
-Starts keyword expansion for a topic and saves discovered keywords into the selected library. The input can be a content idea, feature name, or any seed concept. Expansion runs in the background -- use `get_research_status` to check progress.
+Starts keyword expansion for a topic or a set of seed keywords and saves discovered keywords into the selected library. Expansion runs in the background — use `get_research_status` to check progress.
+
+**Two ways to start expansion:**
+
+- **`topic`** — describe a content idea or feature in plain English (minimum 20 characters). RankEarly generates seed keywords from the topic and expands from there.
+- **`seeds`** — pass comma-separated keywords you already know (1–30 keywords). Use this when you have a specific starting point.
+
+`topic` and `seeds` are mutually exclusive — pass one or the other.
+
+**Effort levels** control how broad the search is. Pass `effort` explicitly; it defaults to `medium` when omitted.
+
+| Effort | Label | Seeds used | Use when |
+|--------|-------|-----------|----------|
+| `xlow` | Ultra Low | 1 | Expanding a single specific keyword |
+| `low` | Low | 5 | A niche topic or targeted discovery |
+| `medium` | Medium | 10 | A common, specific topic |
+| `high` | High | 20 | A broad topic with diverse angles |
+| `xhigh` | Ultra High | 30 | Extensive discovery across a full category |
 
 ### `get_research_status`
 
-Checks the status of a background task like keyword expansion. Returns the current status and a link where you can inspect the result.
+Checks the status of a background task — keyword expansion or topic clustering. Returns the current status and a link where you can inspect the result.
 
 ### `cluster_keywords`
 
@@ -111,7 +129,7 @@ Groups keywords in a library into topics and keyword clusters. Best used after t
 
 ### `analyze_serp`
 
-Analyzes the SERP for a keyword in the selected library. Returns winnability signals that help you understand how competitive each ranking page is and where the opportunities are.
+Runs a deep content gap analysis on the saved SERP for a keyword and returns the results directly. Pass `mode: "content_gap_analysis"` — this is currently the only supported mode.
 
 ### `list_topics`
 
@@ -124,3 +142,11 @@ Gets detailed information about a specific topic, including its name, descriptio
 ### `delete_topics`
 
 Deletes one or more topics from a keyword library by their names. Use this to remove unwanted content structures.
+
+### `audit_content_quality`
+
+Audits content quality against a 40+ point E-E-A-T checklist and returns a scored report. Pass a `url` to audit a published page, or omit it to upload a local draft file instead.
+
+The tool returns a `curl` command. Run it to get the formatted audit report.
+
+See [Content Audit](/content-audit) for the full documentation on what gets checked and how to use this in a writing workflow.

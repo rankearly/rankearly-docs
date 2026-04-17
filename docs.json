@@ -37,7 +37,8 @@
             "pages": [
               "skills",
               "mcp-server",
-              "best-practices/content-writing"
+              "content-writing",
+              "content-audit"
             ]
           }
         ]

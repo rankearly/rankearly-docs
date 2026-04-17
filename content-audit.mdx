@@ -1,0 +1,52 @@
+---
+title: "Content Audit"
+description: "Check whether your content meets Google's quality bar — and the emerging bar for AI-driven search — before you publish."
+---
+
+The Content Audit checks your article against a 40+ point checklist built on Google's E-E-A-T guidelines, extended for the GEO era where AI models read, cite, and surface your content. You give it a URL or a draft file. It returns a scored report across seven dimensions with specific, actionable findings.
+
+## What gets checked
+
+Scores are weighted by content type. A product review weights Experience heavily. A how-to guide shifts weight toward Clarity and Expertise. The seven dimensions:
+
+| Code | Dimension | Core question |
+|------|-----------|---------------|
+| C | **Clarity** | Does the content answer the actual question? Is the core answer in the first 150 words? Does the title deliver what it promises? |
+| O | **Organization** | Is there a TL;DR? Do comparisons use tables? Can a reader — or an AI — extract your key point without reading everything? |
+| R | **Rigor** | Are claims backed by data? Precise numbers with units, external citations, authoritative sources — not "many" or "approximately." |
+| E | **Exclusivity** | Does the content say something that isn't already everywhere? Original data, first-party research, frameworks AI can cite you for. |
+| Exp | **Experience** | Did you actually do the thing? Real timelines, original screenshots, real problems encountered — not just third-person description. |
+| Ept | **Expertise** | Is the reasoning transparent? Not just conclusions, but why you reached them and what tradeoffs you considered. |
+| T | **Trust** | Are affiliate relationships disclosed? Is there a visible update date? Are risk disclaimers present where the topic requires them? |
+
+## Using the MCP tool
+
+The MCP tool is `audit_content_quality`. Call it with a URL to audit a published page, or without a URL to audit a local draft.
+
+**URL mode (published page):**
+
+```
+audit_content_quality(url: "https://yoursite.com/your-post")
+```
+
+The tool returns a `curl` command. Run it to get the full report.
+
+**Draft file mode:**
+
+Call `audit_content_quality` without a URL. The tool returns a `curl` command with a placeholder path — replace it with your actual file path:
+
+```bash
+UPLOAD_URL="<upload_url from tool response>"
+
+curl --max-time 120 --request PUT "${UPLOAD_URL}" \
+  -H "content-type: text/markdown; charset=utf-8" \
+  --data-binary @"blogs/<topic>/blog.md"
+```
+
+The report lists which checks passed, which failed, and what to fix.
+
+## In the blog-creator workflow
+
+If you use the [Blog Creator](/content-writing) skill, the audit runs automatically. After each draft, the skill calls `audit_content_quality`, runs the curl command, and revises based on the findings — up to three rounds. If the content still doesn't pass after three iterations, the skill saves the best version and notes what's still unresolved.
+
+You don't need to run the audit manually when using the blog creator.

@@ -1,22 +1,64 @@
 ---
 title: "Topic Clustering"
-description: "Group the keyword clusters already in your library into broader themes you can use as a topical map."
+description: "Group the keyword clusters in your library into a small set of broader subject areas you can use as a content map."
 ---
 
-Topic Clustering groups the keyword clusters already in your library into a small set of broader themes — the hub layer above your page-level topics.
+Topic Clustering reads the keyword clusters already in your library and sorts them into a small set of broader subject areas called **themes**. The result is a tidy map you can plan content around: a handful of themes at the top, and the keyword clusters that belong under each one.
 
-In RankEarly, a **topic** means a keyword cluster — a page-level opportunity. A **theme** is a broader subject area that organizes related topics into coherent information architecture.
+## The three levels in RankEarly
 
-The delivered structure is **Theme → Keyword Clusters**. Each keyword cluster is the minimum unit for content planning, and one page should map to exactly one keyword cluster.
+Before anything else, it helps to be clear about the words we use. RankEarly organizes everything into three levels:
+
+<table>
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th>What it is</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Keyword**</td>
+      <td>A phrase someone types into Google.</td>
+      <td>*best project management tool for startups*</td>
+    </tr>
+    <tr>
+      <td>**Keyword cluster**</td>
+      <td>A group of keywords Google answers with nearly the same results. One cluster = one page you should write.</td>
+      <td>*project management software* (the cluster containing *project management tool*, *best PM software*, *top PM tools*, …)</td>
+    </tr>
+    <tr>
+      <td>**Theme**</td>
+      <td>A broader subject that ties several related keyword clusters together. Think of it as a section of your site.</td>
+      <td>*Project Management* (the theme containing clusters like *task tracking*, *team collaboration*, *gantt charts*)</td>
+    </tr>
+  </tbody>
+</table>
+
+In plain words: **keywords roll up into clusters, and clusters roll up into themes.**
+
+<img
+  src="https://cdn.rankearly.pro/images/docs/topic-clustering-hierarchy.jpg"
+  alt="Diagram showing keywords grouped into a keyword cluster, and keyword clusters grouped under a theme"
+  width="920"
+/>
+
+### A note on the word "topic"
+
+The word *topic* means different things across SEO tools — Semrush, Ahrefs, and Keyword Insights each use it a little differently, sometimes for a single keyword, sometimes for a cluster, sometimes for a subject area. In RankEarly, **topic is just another word for keyword cluster** — a page-level opportunity. This page uses *keyword cluster* throughout to avoid confusion.
 
 ## When to use it
 
-Run Topic Clustering when:
+Topic Clustering becomes useful once your library has grown too large to scan cluster by cluster. Run it when:
 
-- the library has grown large and you want a navigable map grouped by broader subject
-- you want a hub-level view to plan a [pillar-cluster](/glossary#pillar-cluster-model) architecture
+- your library has enough keyword clusters that a top-down map would save time
+- you want to decide which subject areas are worth investing in and which to skip
+- you want a cleaner site architecture by grouping pages under a few categories
 
-For a small or focused library, working directly from the keyword clusters in your [library](/keyword-library) is usually enough.
+You do **not** need themes to start. For a new site or a small library, pick keyword clusters directly from your [library](/keyword-library) and start writing. Themes become worth the step once you have enough clusters that grouping them pays off — typically a few dozen.
+
+A typical 500–1,000-keyword library produces around 15–20 themes. Themes are intentionally selective so each one is substantial enough to build content around.
 
 ## Before you start
 
@@ -36,8 +78,8 @@ For a small or focused library, working directly from the keyword clusters in yo
       width="920"
     />
   </Step>
-  <Step title="Group clusters under broad themes">
-    RankEarly surfaces a small set of broad themes that multiple clusters share and that are most relevant to your business, then groups related clusters under the theme they best fit. Clusters that do not clearly fit any theme stay uncategorized.
+  <Step title="Group clusters under broader themes">
+    RankEarly surfaces a small set of themes that multiple clusters share and that are most relevant to your business, then groups related clusters under the theme they best fit. Clusters that do not clearly fit any theme stay uncategorized.
 
     <img
       src="https://cdn.rankearly.pro/images/docs/topic-clustering.jpg"
@@ -46,7 +88,7 @@ For a small or focused library, working directly from the keyword clusters in yo
     />
   </Step>
   <Step title="Prioritize what to write">
-    Review the themes and the keyword clusters inside each one to decide which areas best fit your project, your audience, and the places where you can publish credible experience-backed content.
+    Review the themes and the keyword clusters inside each one to decide which areas best fit your project, your audience, and the places where you can publish credible, experience-backed content.
   </Step>
 </Steps>
 
@@ -56,7 +98,7 @@ Review each theme as a group of related keyword clusters. Review each keyword cl
 
 Theme names come from the most central keyword cluster inside that theme. Treat them as working labels, not final page titles.
 
-Use the cluster metrics and underlying keywords to decide:
+Use the cluster metrics and the underlying keywords to decide:
 
 - which themes best align with your project and expertise
 - which keyword clusters are the best places to start writing
@@ -68,17 +110,18 @@ A keyword cluster is the minimum unit for content planning. Writing multiple pag
 
 Plan one page per keyword cluster. If a cluster feels too narrow to fill a page, it usually belongs inside a broader cluster; re-check the clusters in your library before splitting.
 
-## Relationship to the pillar-cluster model
+## Why themes matter
 
-Topic Clustering is the organization step. It produces the grouped structure: themes at the top, keyword clusters underneath.
+Themes do two concrete things keyword clusters alone do not:
 
-The [pillar-cluster model](/glossary#pillar-cluster-model) is a downstream content-architecture strategy you can build from that output:
+1. **A bird's-eye view of your content plan.** Instead of staring at dozens of clusters in a flat list, you see a handful of subject areas — each one a section you can sequence, prioritize, or use to build breadcrumb-style navigation. You also see at a glance where your library is strong and where it is thin.
+2. **A starting point for building linked groups of pages.** Inside each theme, one keyword cluster usually has broader scope than the others. That cluster is a natural candidate for an overview page, with the remaining clusters in the theme as detailed pages linking up to it. This pattern is called the [pillar-cluster model](/glossary#pillar-cluster-model) — themes give you the map to build it.
 
-- use a theme as the hub (the pillar page covers the broad subject)
-- use the keyword clusters under that theme as the supporting pages
-- interlink them so search engines see the topical structure
+## Themes are based on meaning, not word overlap
 
-Topic Clustering gives you the map. The pillar-cluster model is one way to turn that map into a published site architecture.
+RankEarly builds themes around what each keyword cluster actually means for your business. Most other tools' "topic cluster" or "parent topic" features rely on linguistic similarity — NLP models that group phrases sharing close wording, stems, or related terms. That approach is well-established and fast, but at the theme level it can group queries that *sound* related yet answer different questions for the reader. For example, `what is CRM` and `what is CRM account` are linguistically close but are distinct page-level topics.
+
+Because RankEarly groups by business meaning instead, themes come out more selective: a 500–1,000-keyword library typically yields ~15–20 themes, and clusters that do not clearly fit any theme stay uncategorized rather than being pushed into a near-match.
 
 ## Where themes are saved
 
@@ -89,21 +132,18 @@ Themes are saved to the keyword library. Re-running Topic Clustering on the same
 - Keep the themes that match your product, audience, and expertise
 - Start with keyword clusters that combine lower KD with stronger search volume
 - Create a [content brief](/planning/content-brief) from the keyword clusters you plan to write next
-- Use the themes to plan pillar pages once you have enough supporting cluster content
+- Use the themes to plan an overview page (a [pillar page](/glossary#pillar-page)) once you have enough supporting cluster content
 
 ## Tips
 
 <AccordionGroup>
   <Accordion title="Topic Clustering depends on your library quality">
-    Themes are only as good as the clusters they group. If the library is thin or outdated, the topical map will be thin too.
+    Themes are only as good as the clusters they group. If the library is thin or outdated, the map of themes will be thin too.
   </Accordion>
   <Accordion title="Build the library from multiple angles before clustering">
     Themes are strongest when the library already covers different angles of the same market. Run Keyword Expansion across features, audiences, and business angles first, then run Topic Clustering on that fuller library.
   </Accordion>
-  <Accordion title="Semantic grouping, not linguistic similarity">
-    Themes reflect semantic relatedness between page-level topics. Phrases that look similar but answer different questions — for example, `what is CRM` and `what is CRM account` — will not be forced into the same theme.
-  </Accordion>
   <Accordion title="Re-running replaces the previous themes">
-    Topic Clustering does not keep multiple theme sets for the same library. If you want a different topical map, duplicate or create a separate library first.
+    Topic Clustering does not keep multiple theme sets for the same library. If you want a different map, duplicate or create a separate library first.
   </Accordion>
 </AccordionGroup>

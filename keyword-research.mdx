@@ -1,0 +1,181 @@
+---
+title: "AI Keyword Research"
+description: "Use the keyword-research and serp-gap-analysis skills to go from a topic idea to a validated, clustered keyword library ready for content planning."
+---
+
+These two skills cover the full keyword research workflow: building a library of relevant keywords and validating which ones are worth writing about.
+
+<Info>
+  These skills require the RankEarly MCP server to be connected to your agent. See [MCP Server](/mcp-server) for setup instructions.
+</Info>
+
+## The keyword research skills
+
+| Skill | What you get | When to use |
+|---|-------------|-------------|
+| [**keyword-research**](https://www.rankearly.pro/skills/keyword-research) | A keyword library filled with related keywords and keyword clusters, optionally organized into broader themes | You have a topic and want to discover what people are searching for, then structure it into a content plan |
+| [**serp-gap-analysis**](https://www.rankearly.pro/skills/serp-gap-analysis) | A winnability verdict, search intent read, and a content gap analysis for a specific keyword | You have a keyword and want to know whether you can rank for it and what angle to take |
+
+## Keyword expansion
+
+Keyword expansion takes a topic and finds what people actually search for around it. The skill reads your SEO memory to focus the research on keywords relevant to your product, then saves everything into a keyword library.
+
+```
+/keyword-research read seo-memory.md about 'human + ai blog writing'. Expand keywords on this topic. Store keywords in AI-Writing-US-EN library.
+```
+
+The skill:
+
+1. Reads your SEO memory to understand your product context
+2. Resolves the keyword library — creates `AI-Writing-US-EN` for the United States, English market if it doesn't exist yet
+3. Expands the topic into related keywords and saves them to the library
+
+The effort level defaults to Medium (around 500–800 keywords). You can ask for more or fewer:
+
+```
+/keyword-research expand keywords on 'human + ai blog writing', ultra high effort, store in AI-writing-us-en library
+```
+
+See [Keyword Expansion](/research/keyword-expansion) for details on effort levels and credit costs.
+
+## Topic clustering
+
+Once your library has enough keywords, cluster them to get a bird's-eye view of your content plan. Run this after you've collected at least 500 keywords.
+
+```
+/keyword-research cluster the AI-Writing-US-EN library into themes
+```
+
+The skill groups your keywords into themes — broader subject areas — each containing related keyword clusters. One cluster maps to one page. This output becomes the foundation for your content calendar.
+
+See [Topic Clustering](/research/topic-clustering) for how to read and use the results.
+
+## SERP gap analysis
+
+Once you have clusters, use SERP gap analysis to validate specific keywords before committing to writing.
+
+```
+/serp-gap-analysis "keyword expansion"
+```
+
+The skill runs two phases in sequence.
+
+**Phase 1 — Winnability assessment.** Fetches a live SERP snapshot for the keyword and evaluates whether you can realistically rank. Returns a verdict (Winnable / Challenging / Hard-to-Win), the signals driving it, and a read of search intent. If the keyword is Hard-to-Win, the analysis stops here and recommends skipping it.
+
+<Accordion title="Sample Phase 1 output — keyword: 'keyword expansion'">
+
+**Verdict: Winnable**
+
+**Positive signals**
+- Reddit in top 10 (position 5) — user-generated content ranking well indicates the SERP is not locked down by authority sites
+- Keyword difficulty: 0 — very weak competition, easy ranking potential
+- Small/medium sites present — lineardesign.com, clickrank.ai, shynmedia.com are not major authority domains
+- Mixed/fractured intent across top 10 — creates a wedge opportunity for focused content
+
+**Barriers**
+- WordStream at position 2 — established SEO/PPC authority with strong domain authority
+- Low search volume (20) — limited traffic potential even if ranking #1
+
+**Search intent:** Informational — Google rewards comprehensive, actionable how-to guides. Top results serve both SEO and PPC contexts. Content should cover what keyword expansion is, how to do it, and real examples.
+
+</Accordion>
+
+**Phase 2 — Content gap analysis.** Reads the top-ranking pages in depth and surfaces what they miss. Returns the dominant content format, recommended length, must-have topics, and specific gaps you can exploit.
+
+<Accordion title="Sample Phase 2 output — keyword: 'keyword expansion'">
+
+**Dominant format:** How-to guides (44%) — instructional content covering steps and strategies. Secondary: ultimate guides (22%), listicles (22%), glossary pages (11%).
+
+**Recommended length:** 1,000–1,700 words for most formats; opportunity for comprehensive guides at 3,500–4,200 words.
+
+**Must-have topics**
+1. Defining keyword expansion and its core purpose
+2. Why keyword expansion matters for growth
+3. Core strategies: search term reports, competitor analysis, long-tail and semantic keywords
+4. Tool selection: how to evaluate keyword discovery tools
+5. Best practices and common pitfalls: negative keywords, intent alignment, campaign structure
+
+**Weaknesses in current SERP**
+- Most content is vendor-specific or tool-promotional — explanations tie to proprietary features rather than general methods
+- Inconsistent structure: too few H2s for broad topics, shallow coverage of cross-industry applications
+- Thin visual support — image counts range from 1 to 26 with no consistency
+
+**Opportunity gaps**
+- A platform-agnostic guide covering both SEO and PPC without promotional bias
+- Progressive, example-driven structure with real-world examples across industries (e-commerce, SaaS, local)
+- Integrated strategy bridging technical documentation and high-level marketing guidance
+
+</Accordion>
+
+After Phase 2, you can run `/blog-creator` to turn the gap analysis directly into a post. See [Content Writing](/content-writing) for the full writing workflow.
+
+## Adding seed keywords to refine expansion
+
+If your first expansion returns keywords that are too broad, switch to seeds mode. Pick 3–5 keywords from the initial results that are closest to the angle you want to rank for, then re-run expansion using those as seeds.
+
+```
+/keyword-research expand these seeds: "ai writing assistant for blogs, human-ai writing workflow, ai blog editing" into AI-Writing-US-EN library
+```
+
+Each run adds to the library — the existing keywords stay. Use seeds mode to fill in a specific cluster you want to go deeper on, or to pull keywords from a narrower angle the first run missed.
+
+## When to stop expanding vs. when to dig deeper
+
+**Stop expanding when** topic clustering produces a clear set of themes you can plan content around, or you have more keywords than you can write content for in the next few months.
+
+**Dig deeper when:**
+
+- A theme contains only 2–3 clusters — the topic may have more angles to uncover
+- A cluster you care about has too few keywords to judge difficulty or intent
+- Your initial topic was too broad and the results feel scattered
+
+For broad markets, run multiple focused expansions into the same library rather than one `Ultra High` run. A description about "AI writing for B2B marketers" and a separate one about "AI editing tools for agencies" will produce more targeted clusters than a single generic prompt about "AI writing tools."
+
+## Managing multiple libraries
+
+[Keyword libraries](/keyword-library) are scoped to a country and language, so create one per market you're targeting:
+
+```
+/keyword-research expand 'human + ai blog writing' into a US-English library
+/keyword-research expand 'human + ai blog writing' into a UK-English library
+```
+
+You can also separate libraries by topic area — one per product line or content initiative — when you want cleaner topic clustering later. Mixing very different topics in one library can produce themes that are hard to act on.
+
+To see your existing libraries before starting:
+
+```
+/keyword-research list my keyword libraries
+```
+
+## End-to-end example
+
+Here's a full research run for the "human + AI blog writing" topic:
+
+**Step 1 — Expand keywords**
+
+```
+/keyword-research read seo-memory.md about 'human + ai blog writing'. expand keywords on this topic. store keywords in AI-writing-us-en library.
+```
+
+**Step 2 — Cluster into themes**
+
+```
+/keyword-research cluster the AI-writing-us-en library
+```
+
+Review the themes. Pick the clusters that align with your content priorities.
+
+**Step 3 — Validate a keyword before writing**
+
+```
+/serp-gap-analysis "human ai blog writing workflow"
+```
+
+If the verdict is Winnable or Challenging, hand the gap analysis to the blog creator:
+
+```
+/blog-creator write a blog using the SERP gap analysis above
+```
+
+See [Content Writing](/content-writing) for the full writing workflow from here.

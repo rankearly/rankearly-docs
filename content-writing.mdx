@@ -1,5 +1,5 @@
 ---
-title: "Content Writing"
+title: "AI Blog Writing"
 description: "Best practices for using RankEarly's content writing skills to create blog posts that rank."
 ---
 
@@ -11,7 +11,6 @@ These skills work together as a pipeline: research, ideation, creation, audit, o
 |-------|-------------|-------------|
 | [**content-researcher**](https://www.rankearly.pro/skills/content-researcher) | Two research files: a **knowledge base** summarizing what top-ranking pages already cover, and a list of **under-discussed questions** that competitors skip — with researched answers | You have a keyword or topic and want to know what's already out there and what's missing before you write |
 | [**blog-creator**](https://www.rankearly.pro/skills/blog-creator) | A complete blog post — researched, outlined, written, and illustrated — saved to `blogs/<topic>/` | You want to go from a topic idea (or an existing outline) to a published-ready blog in one run |
-| [**blog-title-generator**](https://www.rankearly.pro/skills/blog-title-generator) | 10 title options, each with a search-optimized title tag, a reader-friendly H1, scores across 5 dimensions, and a note on why it works | Your blog is drafted and you need a title that ranks well and gets clicks |
 | [**blog-image**](https://www.rankearly.pro/skills/blog-image) | A ready-to-paste image generation prompt — either a cover image or a clean diagram/illustration | You need a hero image for the top of your post, or an explanatory visual for a section |
 
 ---
@@ -82,22 +81,7 @@ Your draft exists but lacks depth. The fix depends on how much work you want to 
 
 During the outline step, the skill pauses for your review. This is where you steer the rewrite — keep sections that worked, cut what didn't, and add new angles from the fresh `under-discussed.md`.
 
-## Scenario E: Optimize your title after writing
-
-Titles are easier to optimize once the post is written — you know exactly what it delivers.
-
-```
-/blog-title-generator for blogs/email-auth/blog.md
-```
-
-The skill offers two modes:
-
-- **SERP mode** — analyzes the top 10 ranking titles for your keyword and generates titles that exploit gaps in what competitors are doing. Requires RankEarly MCP and may consume credits.
-- **Quick mode** — generates titles immediately from proven formulas without SERP analysis. Good enough when you're iterating fast.
-
-You'll get 10 scored variations with a recommendation on which ones to use and why.
-
-## Scenario F: Audit an existing post
+## Scenario E: Audit an existing post
 
 If you have a blog already published — or a draft written outside the blog creator — you can still check it against the quality ruleset.
 
@@ -105,7 +89,7 @@ Run the [Content Audit](/content-audit) on a URL or a local file. It returns a s
 
 This is the same audit that runs inside `/blog-creator`, just exposed on its own so you can use it against content you didn't write with RankEarly.
 
-## Scenario G: Add a cover image or illustration
+## Scenario F: Add a cover image or illustration
 
 ```
 /blog-image cover for "Keyword Clustering: The Complete Guide"
@@ -162,6 +146,4 @@ Here's how a full content run looks from start to finish:
 
 5. **Review and refine.** The finished blog and illustrations are saved to `blogs/<topic>/`. Read through and make any adjustments.
 
-6. **Optimize the title.** Run `/blog-title-generator` on the finished blog to get 10 scored title options.
-
-7. **Add a cover image.** Run `/blog-image` with your chosen title to generate a cover image prompt.
+6. **Add a cover image.** Run `/blog-image` with your chosen title to generate a cover image prompt.

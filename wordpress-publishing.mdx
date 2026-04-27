@@ -1,0 +1,141 @@
+---
+title: "Publish to WordPress"
+description: "Set up a dedicated WordPress user and application password so the RankEarly team can upload finished articles as drafts for your review."
+---
+
+If your blog runs on WordPress, you can let the RankEarly team upload finished articles directly into your site as drafts. You stay in control of what goes live — every post lands in your **Drafts** queue and waits for you to review and publish.
+
+This page walks you through the one-time setup. It takes about five minutes.
+
+## How it works
+
+<Steps>
+  <Step title="You create a dedicated user for our team">
+    A WordPress user with the **Author** role, used only for our uploads. This keeps our work separate from your team's edits and makes it easy to revoke access at any time.
+  </Step>
+  <Step title="You generate an application password">
+    A long, randomly generated password that authenticates our uploads through the WordPress REST API. It is separate from the user's login password and can be revoked without changing anything else.
+  </Step>
+  <Step title="We upload finished articles as drafts">
+    Each delivered article — including the cover image, alt text, slug, excerpt, tags, and SEO fields — appears in your **Posts → Drafts** list, attributed to the dedicated user. Nothing is published.
+  </Step>
+  <Step title="You review and publish inside WordPress">
+    Open the draft, make any final edits, set the category, and click **Publish** when you're ready.
+  </Step>
+</Steps>
+
+## Step 1: Create the user
+
+Sign in to your WordPress admin as an Administrator, then:
+
+1. Go to **Users → Add New User**.
+2. Fill in the fields:
+   - **Username**: `rankearly` (or any name you prefer).
+   - **Email**: an address you control. WordPress uses this for password resets and notifications. A shared inbox or a `+rankearly` alias works well.
+   - **First name / Last name**: `RankEarly` / `Team` is fine. This becomes the byline on drafts. You can change the post author later before publishing.
+   - **Role**: select **Author**.
+3. Click **Add New User**.
+4. Open the account email from WordPress and set a login password for this user.
+
+<Note>
+  We recommend **Author** rather than Editor or Administrator. Authors can create and edit their own posts and upload media, which is everything we need to deliver a complete draft. They cannot edit other authors' posts or change site settings.
+</Note>
+
+## Step 2: Generate an application password
+
+Application passwords are built into WordPress 5.6 and later. They authenticate API requests without exposing the user's login password.
+
+Sign in as the dedicated user you created in Step 1, then:
+
+1. Go to **Users → Profile**.
+2. Scroll to the **Application Passwords** section near the bottom of the profile page.
+3. In **New Application Password Name**, enter `RankEarly Uploads`.
+4. Click **Add New Application Password**.
+
+![WordPress profile page showing the Application Passwords section with a RankEarly uploads password name ready to add](https://cdn.rankearly.pro/images/docs/wordpress-publishing/screenshot-application-password-new.jpg)
+
+WordPress shows a 24-character password formatted as six groups of four characters, like `abcd EFGH ijkl MNOP qrst UVWX`. **Copy it immediately** — WordPress only displays it once.
+
+![WordPress Application Passwords confirmation showing the generated password and copy button](https://cdn.rankearly.pro/images/docs/wordpress-publishing/screenshot-application-password.jpg)
+
+<Warning>
+  If you navigate away before copying the password, you'll need to revoke it and generate a new one. The password is only shown at creation time.
+</Warning>
+
+<Note>
+  If you stay signed in as an Administrator, you may also be able to open the dedicated user's profile from **Users → All Users → Edit**. The main path for the dedicated user is still **Users → Profile**.
+</Note>
+
+### If you don't see the Application Passwords section
+
+A few hosts and security plugins disable application passwords by default. If the section is missing:
+
+- **The site is not using HTTPS**: make sure your WordPress admin opens with `https://` and WordPress detects the site as secure.
+- **Wordfence, iThemes Security, Solid Security, or similar**: open the plugin's settings and re-enable application passwords or REST API access for authenticated users.
+- **Hosted WordPress (WP Engine, Kinsta, Pressable, etc.)**: confirm with your host that the REST API and application passwords are enabled for your plan.
+- **WordPress.com (not self-hosted)**: use a plugin-enabled plan with hosting features activated. WordPress.com lists Personal, Premium, Business, and Commerce plans as supported for site-specific application passwords.
+
+If you're not sure, send us a note and we'll help diagnose it.
+
+## Step 3: Share the credentials with us
+
+Send us the following over Slack DM or email:
+
+- The **site URL** (for example, `https://yourdomain.com`).
+- The **username** of the dedicated user.
+- The **application password** (the 24-character string from Step 2).
+
+We store credentials only as long as your blog pack is active. When the pack ends — or any time you ask — you can revoke the application password from the same profile page, and our access stops immediately.
+
+## Step 4: Review and publish
+
+When an article is ready, you'll see a new entry in **Posts → Drafts** authored by the RankEarly user. Each draft includes:
+
+![WordPress Posts list showing a RankEarly-authored draft ready for review](https://cdn.rankearly.pro/images/docs/wordpress-publishing/screenshot-wp-posts.jpg)
+
+- The article body as **native Gutenberg blocks** — headings, lists, images, quotes, and separators arrive as proper blocks, so you can edit immediately without clicking *Convert to blocks*.
+- A **featured image** uploaded to your media library, with alt text set on the media item.
+- **Tags**, created on the fly if they don't already exist on your site.
+- A **slug** and **excerpt**.
+- **SEO fields** if you use Yoast, Rank Math, or All in One SEO — we fill in the meta title and description.
+
+<Note>
+  **Categories aren't auto-created.** WordPress only lets Administrators and Editors add new categories, and the RankEarly user is an Author. If you'd like specific categories on our drafts (for example, `Insights` or `Product`), please create them once in **Posts → Categories** before we deliver — we'll assign them automatically from then on. Tags don't have this restriction.
+</Note>
+
+![WordPress post editor showing a RankEarly draft with a featured image, excerpt, slug, and draft status](https://cdn.rankearly.pro/images/docs/wordpress-publishing/screenshot-wp-demo-post.jpg)
+
+To publish:
+
+1. Open the draft and skim it end-to-end.
+2. Set the **category** to match your taxonomy. Tags are already filled in — adjust if needed.
+3. (Optional) Reassign the **author** to a team member if you prefer the byline to come from someone on your side.
+4. Click **Publish**, or schedule it for later.
+
+If you'd like changes before publishing, reply on Slack with what to adjust and we'll update the draft in place.
+
+## Revoking access
+
+When you no longer need our access — or any time you want to rotate credentials:
+
+1. Sign in as the dedicated user and go to **Users → Profile**.
+2. In **Application Passwords**, click **Revoke** next to `RankEarly Uploads`.
+
+The password stops working immediately. You can keep the user account for the post history, or delete it and reassign their drafts to another user from the same screen.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can you publish posts directly instead of saving drafts?">
+    We always save as drafts by default so you stay in control. If you'd rather we publish directly, let us know in Slack and we'll switch the default for your account.
+  </Accordion>
+  <Accordion title="Do you need access to plugins or site settings?">
+    No. The Author role doesn't grant access to plugins, themes, users, or settings. We only create posts and upload media.
+  </Accordion>
+  <Accordion title="What if I use a custom post type for my blog?">
+    Tell us the post type slug (for example, `articles` or `insights`) and we'll upload to it instead of the default `posts`. The user role permissions still apply.
+  </Accordion>
+  <Accordion title="Will this work with WordPress.com?">
+    Yes, for site-specific application passwords on plugin-enabled WordPress.com plans with hosting features activated. WordPress.com currently lists Personal, Premium, Business, and Commerce plans as supported.
+  </Accordion>
+</AccordionGroup>

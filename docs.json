@@ -18,7 +18,6 @@
             "pages": [
               "index",
               "quickstart",
-              "human-ai-blog-writing",
               "glossary"
             ]
           },
@@ -41,6 +40,13 @@
               "keyword-research",
               "content-writing",
               "content-audit"
+            ]
+          },
+          {
+            "group": "Writing Service",
+            "pages": [
+              "human-ai-blog-writing",
+              "wordpress-publishing"
             ]
           }
         ]
